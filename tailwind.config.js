@@ -5,25 +5,31 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#EEA734",
-          100: "#FFFFFF",
-          200: "#bfdbfe",
-          
-          500: "#000000",
-          600: "#3A3A3",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
-          950: "#172554",
+          light: "#10B981", // Emerald
+          dark: "#059669", // Darker Emerald
         },
-        admin: {
-          50: "#edf0f5",
-          100: "#0e192d",
-          150: "#4FD1C5",
-          200: "#152543",
-          250: "#F7FAFC",
+        secondary: {
+          light: "#34D399", // Light Emerald
+          dark: "#047857", // Dark Emerald
         },
+        background: {
+          light: "#F3F4F6", // Light gray
+          dark: "#1F2937", // Dark blue-gray
+        },
+        text: {
+          light: "#1F2937", // Dark gray
+          dark: "#F9FAFB", // Very light gray
+        },
+        card: {
+          light: "#FFFFFF", // White
+          dark: "#374151", // Darker blue-gray
+        },
+      },
+      backgroundImage: {
+        'gradient-light': 'linear-gradient(to right, #10B981, #34D399)',
+        'gradient-dark': 'linear-gradient(to right, #059669, #047857)',
       },
     },
   },
+  darkMode: 'class',
 };

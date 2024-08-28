@@ -5,11 +5,13 @@ import TeacherGrading from '@/components/TeacherGrading';
 import LabAssignment from '@/components/LabAssignment';
 import TestUpload from '@/components/TestUpload';
 import TopicCreation from '@/components/TopicCreation';
+import Messages from '@/pages/Messages';
 
 export default function AppRoutes() {
     const routes = useRoutes([
         { path: '/', element: <Navigate to="/dashboard" replace /> },
         { path: '/dashboard', element: <Dashboard /> },
+        { path: '/messages', element: <Messages /> },
         { 
             path: '/teacher', 
             element: <TeacherDashboard />,
