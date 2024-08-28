@@ -1,30 +1,28 @@
 const LoadingPage = () => {
     return (
         <div className="flex items-center justify-center w-full h-[100vh] loading-anima">
-            <svg version="1.1" id="L1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100">
-                <circle fill="none" stroke="#fff" strokeWidth={6} strokeMiterlimit={15} strokeDasharray="14.2472,14.2472" cx="50" cy="50" r="47">
-                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
-                </circle>
-                <circle fill="none" stroke="#fff" strokeWidth={1} strokeMiterlimit={10} strokeDasharray="10,10" cx="50" cy="50" r="39">
-                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s" from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
-                </circle>
-                <g fill="#fff">
-                    <rect x="30" y="35" width="5" height="30">
-                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.1" />
-                    </rect>
-                    <rect x="40" y="35" width="5" height="30">
-                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.2" />
-                    </rect>
-                    <rect x="50" y="35" width="5" height="30">
-                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3" />
-                    </rect>
-                    <rect x="60" y="35" width="5" height="30">
-                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.4" />
-                    </rect>
-                    <rect x="70" y="35" width="5" height="30">
-                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.5" />
-                    </rect>
-                </g>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100" width="100" height="100">
+                {/* Kitob */}
+                <rect x="20" y="30" width="60" height="40" fill="none" stroke="#fff" strokeWidth="2">
+                    <animate attributeName="y" values="30;28;30" dur="1s" repeatCount="indefinite" />
+                </rect>
+                <path d="M20 30 Q50 10 80 30" fill="none" stroke="#fff" strokeWidth="2">
+                    <animate attributeName="d" values="M20 30 Q50 10 80 30; M20 28 Q50 8 80 28; M20 30 Q50 10 80 30" dur="1s" repeatCount="indefinite" />
+                </path>
+                
+                {/* Qalam */}
+                <line x1="85" y1="20" x2="85" y2="80" stroke="#fff" strokeWidth="2">
+                    <animateTransform attributeName="transform" type="rotate" from="0 85 50" to="360 85 50" dur="3s" repeatCount="indefinite" />
+                </line>
+                <polygon points="83,20 87,20 85,15" fill="#fff">
+                    <animateTransform attributeName="transform" type="rotate" from="0 85 50" to="360 85 50" dur="3s" repeatCount="indefinite" />
+                </polygon>
+                
+                {/* Loading yozuvi */}
+                <text x="50" y="90" textAnchor="middle" fill="#fff" fontSize="10">
+                    Loading
+                    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+                </text>
             </svg>
         </div>
     );
