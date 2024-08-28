@@ -9,6 +9,7 @@ const Messages = () => {
     const [selectedMessage, setSelectedMessage] = useState(null);
     const [reply, setReply] = useState('');
     const [loading, setLoading] = useState(true);
+    const [isMobileMessageListVisible, setIsMobileMessageListVisible] = useState(true);
 
     useEffect(() => {
         // Ma'lumotlarni yuklash simulyatsiyasi
@@ -30,6 +31,12 @@ const Messages = () => {
         if (message.unread) {
             setMessages(messages.map(m => m.id === message.id ? {...m, unread: false} : m));
         }
+        setIsMobileMessageListVisible(false);
+    };
+
+    const handleBackToList = () => {
+        setIsMobileMessageListVisible(true);
+        setSelectedMessage(null);
     };
 
     const handleReply = () => {
@@ -40,7 +47,7 @@ const Messages = () => {
     return (
         <DashboardLayout>
             <div className="flex flex-col md:flex-row h-full bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                <div className="w-full md:w-1/3 bg-white dark:bg-gray-800 border-b md:border-r border-gray-200 dark:border-gray-700">
+                <div className={`w-full md:w-1/3 bg-white dark:bg-gray-800 border-b md:border-r border-gray-200 dark:border-gray-700 ${isMobileMessageListVisible ? 'block' : 'hidden md:block'}`}>
                     <h2 className="text-xl font-bold p-4 bg-gradient-light dark:bg-gradient-dark text-white" data-aos="fade-right">Xabarlar</h2>
                     <div className="overflow-y-auto h-[calc(100vh-14rem)] md:h-[calc(100vh-10rem)]">
                         {loading ? (
@@ -66,7 +73,15 @@ const Messages = () => {
                         )}
                     </div>
                 </div>
-                <div className="w-full md:w-2/3 bg-white dark:bg-gray-800 p-6">
+                <div className={`w-full md:w-2/3 bg-white dark:bg-gray-800 p-6 ${isMobileMessageListVisible ? 'hidden md:block' : 'block'}`}>
+                    {!isMobileMessageListVisible && (
+                        <button
+                            className="mb-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-text-light dark:text-text-dark rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-200 ease-in-out md:hidden"
+                            onClick={handleBackToList}
+                        >
+                            &larr; Xabarlarga qaytish
+                        </button>
+                    )}
                     {loading ? (
                         <div className="animate-pulse">
                             <div className="h-8 bg-gray-300 dark:bg-gray-700 rounded w-3/4 mb-4"></div>
