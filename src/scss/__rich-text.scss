@@ -1,0 +1,47 @@
+.quill-dark .ql-toolbar {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.quill-dark .ql-container {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.quill-dark .ql-editor {
+    color: #e5e7eb;
+}
+
+.quill-dark .ql-editor.ql-blank::before {
+    color: #9ca3af;
+}
+
+.quill-dark .ql-stroke {
+    stroke: #e5e7eb;
+}
+
+.quill-dark .ql-fill {
+    fill: #e5e7eb;
+}
+
+.quill-dark .ql-picker {
+    color: #e5e7eb;
+}
+
+.quill-dark .ql-picker-options {
+    background-color: #374151;
+}
+
+.quill-dark .ql-picker-item:hover {
+    background-color: #4b5563;
+}
+
+.quill-dark .ql-tooltip {
+    background-color: #374151;
+    color: #e5e7eb;
+}
+
+.quill-dark .ql-tooltip input[type="text"] {
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
