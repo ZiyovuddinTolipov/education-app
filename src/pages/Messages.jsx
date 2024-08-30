@@ -57,7 +57,7 @@ const Messages = () => {
 
     return (
         <DashboardLayout>
-            <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)] bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+            <div className="flex flex-col md:flex-row min-h-[calc(100vh-4rem)] h-auto pb-10 bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
                 <div className={`w-full md:w-1/3 bg-surface-light dark:bg-surface-dark border-b md:border-r border-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
                     <h2 className="text-xl font-bold p-4 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark" data-aos="fade-right">Xabarlar</h2>
                     <div className="overflow-y-auto flex-grow">
