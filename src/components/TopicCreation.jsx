@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdSave, MdTopic, MdAttachFile } from 'react-icons/md';
+import {  MdTopic, MdAttachFile } from 'react-icons/md';
 
 const TopicCreation = () => {
     const [topicTitle, setTopicTitle] = useState('');

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { MdEdit } from 'react-icons/md';
 import DashboardLayout from '../layouts/DashboardLayout';
 import { profileData } from '../data/data';

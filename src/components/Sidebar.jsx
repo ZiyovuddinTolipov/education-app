@@ -1,9 +1,21 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation } from 'react-router-dom';
-import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdTopic, MdMenu, MdClose, MdMessage } from 'react-icons/md';
+import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdTopic, MdMenu, MdClose,  MdExpandMore, MdExpandLess } from 'react-icons/md';
+import { useState } from 'react';
+import { IoDocuments  } from "react-icons/io5";
 
 const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
     const location = useLocation();
+    const [isTeacherMenuOpen, setIsTeacherMenuOpen] = useState(false);
+
+    const toggleTeacherMenu = () => setIsTeacherMenuOpen(!isTeacherMenuOpen);
+
+    const teacherMenuItems = [
+        { to: "/teacher/grading", icon: MdSchool, text: "Baholash" },
+        { to: "/teacher/lab", icon: MdAssignment, text: "Laboratoriya" },
+        { to: "/teacher/test", icon: MdQuiz, text: "Test yuklash" },
+        { to: "/teacher/topic", icon: MdTopic, text: "Mavzu yaratish" },
+    ];
 
     return (
         <>
@@ -18,11 +30,34 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
                 <nav className="mt-8">
                     <ul>
                         <SidebarItem to="/dashboard" icon={MdDashboard} text="Dashboard" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/dashboard'} />
-                        <SidebarItem to="/messages" icon={MdMessage} text="Xabarlar" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/messages'} />
-                        <SidebarItem to="/teacher/grading" icon={MdSchool} text="Baholash" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/teacher/grading'} />
-                        <SidebarItem to="/teacher/lab" icon={MdAssignment} text="Laboratoriya" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/teacher/lab'} />
-                        <SidebarItem to="/teacher/test" icon={MdQuiz} text="Test yuklash" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/teacher/test'} />
-                        <SidebarItem to="/teacher/topic" icon={MdTopic} text="Mavzu yaratish" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/teacher/topic'} />
+                        <SidebarDivider isOpen={isOpen} />
+                        <SidebarItem to="/files" icon={IoDocuments } text="Fayllar" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/files'} />
+                        <SidebarDivider isOpen={isOpen} />
+                        <li className="mb-4">
+                            <button
+                                onClick={toggleTeacherMenu}
+                                className={`flex items-center p-2 rounded w-full ${isOpen ? '' : 'justify-center'}`}
+                            >
+                                <MdSchool size={20} />
+                                {isOpen && <span className="ml-2">O&apos;qituvchi</span>}
+                                {isOpen && (isTeacherMenuOpen ? <MdExpandLess size={20} className="ml-auto" /> : <MdExpandMore size={20} className="ml-auto" />)}
+                            </button>
+                            {isTeacherMenuOpen && (
+                                <ul className="ml-4">
+                                    {teacherMenuItems.map((item) => (
+                                        <SidebarItem
+                                            key={item.to}
+                                            to={item.to}
+                                            icon={item.icon}
+                                            text={item.text}
+                                            isOpen={isOpen}
+                                            isDarkMode={isDarkMode}
+                                            isActive={location.pathname === item.to}
+                                        />
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -31,15 +66,23 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
             <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark z-50">
                 <ul className="flex justify-around items-center h-16">
                     <MobileMenuItem to="/dashboard" icon={MdDashboard} text="Dashboard" isDarkMode={isDarkMode} isActive={location.pathname === '/dashboard'} />
-                    <MobileMenuItem to="/messages" icon={MdMessage} text="Xabarlar" isDarkMode={isDarkMode} isActive={location.pathname === '/messages'} />
-                    <MobileMenuItem to="/teacher/grading" icon={MdSchool} text="Baholash" isDarkMode={isDarkMode} isActive={location.pathname === '/teacher/grading'} />
+                    <MobileDivider />
+                    <MobileMenuItem to="/files" icon={IoDocuments } text="Files" isDarkMode={isDarkMode} isActive={location.pathname === '/files'} />
+                    <MobileDivider />
+                    <MobileDropdownMenu
+                        icon={MdSchool}
+                        text="O'qituvchi"
+                        items={teacherMenuItems}
+                        isDarkMode={isDarkMode}
+                        isActive={teacherMenuItems.some(item => location.pathname === item.to)}
+                    />
                 </ul>
             </nav>
         </>
     );
 };
 
-const SidebarItem = ({ to, icon: Icon, text, isOpen, isDarkMode, isActive }) => (
+const SidebarItem = ({ to, icon: Icon, text, isOpen, isActive }) => (
     <li className="mb-4">
         <Link
             to={to}
@@ -53,7 +96,7 @@ const SidebarItem = ({ to, icon: Icon, text, isOpen, isDarkMode, isActive }) => 
     </li>
 );
 
-const MobileMenuItem = ({ to, icon: Icon, text, isDarkMode, isActive }) => (
+const MobileMenuItem = ({ to, icon: Icon, text, isActive }) => (
     <li>
         <Link
             to={to}
@@ -63,6 +106,64 @@ const MobileMenuItem = ({ to, icon: Icon, text, isDarkMode, isActive }) => (
             <span className="text-xs">{text}</span>
         </Link>
     </li>
+);
+
+const MobileDropdownMenu = ({ icon: Icon, text, items, isActive }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+
+    return (
+        <li className="relative">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={`flex flex-col items-center ${isActive ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
+            >
+                <Icon size={24} />
+                <span className="text-xs">{text}</span>
+            </button>
+            {isOpen && (
+                <ul 
+                    className="absolute bottom-full -left-[110px] w-48 bg-surface-light dark:bg-surface-dark shadow-lg rounded-t-md overflow-hidden transform -translate-x-1/2"
+                    data-aos="fade-right"
+                >
+                    {items.map((item, index) => {
+                        const isItemActive = location.pathname === item.to;
+                        return (
+                            <li key={item.to}>
+                                <Link
+                                    to={item.to}
+                                    className={`flex items-center p-3 ${
+                                        isItemActive
+                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
+                                            : 'hover:bg-primary-light dark:hover:bg-primary-dark'
+                                    }`}
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    <item.icon size={20} className={`mr-2 ${isItemActive ? 'text-text-light dark:text-text-dark' : ''}`} />
+                                    <span>{item.text}</span>
+                                </Link>
+                                {index < items.length - 1 && <DropdownDivider />}
+                            </li>
+                        );
+                    })}
+                </ul>
+            )}
+        </li>
+    );
+};
+
+const DropdownDivider = () => (
+    <hr className="border-gray-200 dark:border-gray-400 mx-3" />
+);
+
+const SidebarDivider = ({ isOpen }) => (
+    <li className={`my-2 ${isOpen ? 'mx-4' : 'mx-2'}`}>
+        <hr className="border-gray-300 dark:border-gray-400" />
+    </li>
+);
+
+const MobileDivider = () => (
+    <li className="h-8 w-px bg-gray-300 dark:bg-gray-700" />
 );
 
 export default Sidebar;
