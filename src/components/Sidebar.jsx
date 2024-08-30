@@ -124,7 +124,7 @@ const MobileDropdownMenu = ({ icon: Icon, text, items, isActive }) => {
             {isOpen && (
                 <ul 
                     className="absolute bottom-full -left-[110px] w-48 bg-surface-light dark:bg-surface-dark shadow-lg rounded-t-md overflow-hidden transform -translate-x-1/2"
-                    data-aos="fade-right"
+
                 >
                     {items.map((item, index) => {
                         const isItemActive = location.pathname === item.to;
