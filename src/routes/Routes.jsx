@@ -7,6 +7,7 @@ import TestUpload from '@/components/TestUpload';
 import TopicCreation from '@/components/TopicCreation';
 import Messages from '@/pages/Messages';
 import Profile from '@/pages/Profile';  // Add this import
+import Files from '@/pages/Files';
 
 export default function AppRoutes() {
     const routes = useRoutes([
@@ -14,6 +15,7 @@ export default function AppRoutes() {
         { path: '/dashboard', element: <Dashboard /> },
         { path: '/messages', element: <Messages /> },
         { path: '/profile', element: <Profile /> },  // Add this route
+        { path: '/files', element: <Files /> },  // Add this route
         { 
             path: '/teacher', 
             element: <TeacherDashboard />,
