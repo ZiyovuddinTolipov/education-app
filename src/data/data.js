@@ -1,3 +1,20 @@
+export const filesData = [
+    { id: 1, name: 'Dars jadvali 2023', description: 'Joriy yil uchun dars jadvali', downloadUrl: '#', category: 'Dars jadvali', createdAt: '2023-01-15T08:00:00Z' },
+    { id: 2, name: 'Baholash mezonlari', description: 'Fanlar bo\'yicha baholash mezonlari', downloadUrl: '#', category: 'O\'quv jarayoni', createdAt: '2023-02-01T10:30:00Z' },
+    { id: 3, name: 'Ilmiy anjuman dasturi', description: 'Xalqaro ilmiy anjuman dasturi', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-03-10T14:45:00Z' },
+    { id: 4, name: 'Stipendiya dasturi hujjatlari', description: 'Ariza va boshqa zarur hujjatlar', downloadUrl: '#', category: 'Stipendiya', createdAt: '2023-04-05T09:15:00Z' },
+    { id: 5, name: 'Laboratoriya yo\'riqnomasi', description: 'Yangi jihozlardan foydalanish bo\'yicha yo\'riqnoma', downloadUrl: '#', category: 'Laboratoriya', createdAt: '2023-04-20T11:00:00Z' },
+    { id: 6, name: 'Kitobxonlik haftaligi dasturi', description: 'Tadbirlar va taqdimotlar ro\'yxati', downloadUrl: '#', category: 'Madaniy tadbirlar', createdAt: '2023-05-02T13:30:00Z' },
+    { id: 7, name: 'Onlayn ta\'lim qo\'llanmasi', description: 'Platformadan foydalanish bo\'yicha qo\'llanma', downloadUrl: '#', category: 'Onlayn ta\'lim', createdAt: '2023-05-15T10:00:00Z' },
+    { id: 8, name: 'Talabalar almashinuvi dasturi', description: 'Dastur shartlari va ariza topshirish tartibi', downloadUrl: '#', category: 'Xalqaro aloqalar', createdAt: '2023-06-01T09:45:00Z' },
+    { id: 9, name: 'Ilmiy maqola yozish bo\'yicha tavsiyalar', description: 'Maqola tayyorlash va nashr etish bo\'yicha ko\'rsatmalar', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-06-20T15:30:00Z' },
+    { id: 10, name: 'Yangi o\'quv dasturi', description: 'Kelgusi o\'quv yili uchun yangilangan dastur', downloadUrl: '#', category: 'O\'quv jarayoni', createdAt: '2023-07-05T11:15:00Z' },
+    { id: 11, name: 'Sport musobaqalari jadvali', description: 'Universitetlararo sport musobaqalari jadvali', downloadUrl: '#', category: 'Sport', createdAt: '2023-07-20T14:00:00Z' },
+    { id: 12, name: 'Magistratura dasturlari haqida ma\'lumot', description: 'Dasturlar tavsifi va qabul talablari', downloadUrl: '#', category: 'Magistratura', createdAt: '2023-08-01T10:30:00Z' },
+    { id: 13, name: 'Grant loyihasi taklifi namunasi', description: 'Ilmiy grant loyihasi taklifi tayyorlash uchun namuna', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-08-15T09:00:00Z' },
+    { id: 14, name: 'Chet tili kurslari jadvali', description: 'Qo\'shimcha chet tili kurslari jadvali', downloadUrl: '#', category: 'Til o\'rganish', createdAt: '2023-09-01T13:45:00Z' },
+    { id: 15, name: 'Amaliyot dasturi yo\'riqnomasi', description: 'Yozgi amaliyot o\'tash tartibi haqida yo\'riqnoma', downloadUrl: '#', category: 'Amaliyot', createdAt: '2023-09-15T11:30:00Z' },
+];
 export const messagesData = [
     {
         id: 1,
@@ -160,6 +177,7 @@ export const messagesData = [
         unread: false,
     },
 ];
+
 export const profileData = {
     name: 'Abdulla Qodirov',
     email: 'abdulla.qodirov@example.com',
@@ -261,3 +279,4 @@ export const profileData = {
         googleScholar: "https://scholar.google.com/citations?user=AbdullaQodirov"
     }
 };
+

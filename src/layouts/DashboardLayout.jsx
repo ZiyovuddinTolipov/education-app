@@ -16,14 +16,14 @@ const DashboardLayout = ({ children }) => {
     };
 
     return (
-        <div className="flex h-screen bg-background-light dark:bg-background-dark">
+        <div className="flex min-h-[100svh] h-auto bg-background-light dark:bg-background-dark">
             <Sidebar 
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar} 
                 isDarkMode={theme === 'dark'}
             />
-            <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
-                <header className="bg-surface-light dark:bg-surface-dark shadow-md">
+            <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 relative ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
+                <header className="bg-surface-light dark:bg-surface-dark shadow-md sticky top-0 z-50">
                     <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                         <h1 className="text-2xl font-semibold text-text-light dark:text-text-dark">Dashboard</h1>
                         <div className="flex items-center space-x-4">
