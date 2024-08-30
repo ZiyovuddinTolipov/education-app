@@ -58,8 +58,8 @@ const Messages = () => {
     return (
         <DashboardLayout>
             <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)] bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                <div className={`w-full md:w-1/3 bg-white dark:bg-gray-800 border-b md:border-r border-gray-200 dark:border-gray-700 ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
-                    <h2 className="text-xl font-bold p-4 bg-gradient-light dark:bg-gradient-dark text-white" data-aos="fade-right">Xabarlar</h2>
+                <div className={`w-full md:w-1/3 bg-surface-light dark:bg-surface-dark border-b md:border-r border-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
+                    <h2 className="text-xl font-bold p-4 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark" data-aos="fade-right">Xabarlar</h2>
                     <div className="overflow-y-auto flex-grow">
                         {loading ? (
                             Array(5).fill().map((_, index) => <MessageSkeleton key={index} />)
@@ -67,22 +67,22 @@ const Messages = () => {
                             messages.map((message, index) => (
                                 <div
                                     key={message.id}
-                                    className={`p-4 border-b border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-150 ease-in-out ${message.unread ? 'bg-indigo-50 dark:bg-indigo-900' : 'bg-white dark:bg-gray-800'
-                                        } ${selectedMessage?.id === message.id ? 'bg-indigo-100 dark:bg-indigo-800' : ''}`}
+                                    className={`p-4 border-b border-surface-300 dark:border-surface-400 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-300 transition duration-150 ease-in-out ${message.unread ? 'bg-primary-100 dark:bg-primary-200' : 'bg-white dark:bg-surface-200'
+                                        } ${selectedMessage?.id === message.id ? 'bg-primary-200 dark:bg-primary-300' : ''}`}
                                     onClick={() => handleMessageClick(message)}
                                     data-aos="zoom-in"
                                     data-aos-delay={index * 70}
                                 >
                                     <div className="flex items-center">
                                         {message.unread ?
-                                            <FaEnvelope className="text-primary-light dark:text-primary-dark mr-2" /> :
-                                            <FaEnvelopeOpen className="text-gray-500 dark:text-gray-400 mr-2" />
+                                            <FaEnvelope className="text-primary-400 dark:text-primary-300 mr-2" /> :
+                                            <FaEnvelopeOpen className="text-surface-500 dark:text-surface-400 mr-2" />
                                         }
                                         <div>
-                                            <div className={`font-semibold ${message.unread ? 'text-text-light dark:text-text-dark' : 'text-gray-600 dark:text-gray-400'}`}>
+                                            <div className={`font-semibold ${message.unread ? 'text-surface-700 dark:text-surface-100' : 'text-surface-600 dark:text-surface-300'}`}>
                                                 {message.sender}
                                             </div>
-                                            <div className="text-sm text-gray-600 dark:text-gray-400">{message.subject}</div>
+                                            <div className="text-sm text-surface-500 dark:text-surface-400">{message.subject}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,10 +90,10 @@ const Messages = () => {
                         )}
                     </div>
                 </div>
-                <div className={`w-full md:w-2/3 bg-white dark:bg-gray-800 p-6 ${isMobileMessageListVisible ? 'hidden md:block' : 'block'}`}>
+                <div className={`w-full md:w-2/3 bg-background-light dark:bg-background-dark p-6 ${isMobileMessageListVisible ? 'hidden md:block' : 'block'}`}>
                     {!isMobileMessageListVisible && (
                         <button
-                            className="mb-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-text-light dark:text-text-dark rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-200 ease-in-out md:hidden"
+                            className="mb-4 px-4 py-2 bg-surface-200 dark:bg-surface-300 text-surface-700 dark:text-surface-100 rounded-md hover:bg-surface-300 dark:hover:bg-surface-400 transition duration-200 ease-in-out md:hidden"
                             onClick={handleBackToList}
                         >
                             &larr; Xabarlarga qaytish
@@ -101,18 +101,18 @@ const Messages = () => {
                     )}
                     {loading ? (
                         <div className="animate-pulse">
-                            <div className="h-8 bg-gray-300 dark:bg-gray-700 rounded w-3/4 mb-4"></div>
-                            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full mb-2"></div>
-                            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full mb-2"></div>
-                            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                            <div className="h-8 bg-surface-300 dark:bg-surface-400 rounded w-3/4 mb-4"></div>
+                            <div className="h-4 bg-surface-300 dark:bg-surface-400 rounded w-full mb-2"></div>
+                            <div className="h-4 bg-surface-300 dark:bg-surface-400 rounded w-full mb-2"></div>
+                            <div className="h-4 bg-surface-300 dark:bg-surface-400 rounded w-3/4"></div>
                         </div>
                     ) : selectedMessage ? (
                         <>
-                            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6" data-aos="fade-left">
-                                <h3 className="text-2xl font-bold mb-2 text-primary-light dark:text-primary-dark">{selectedMessage.subject}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 mb-4">{`Kimdan: ${selectedMessage.sender}`}</p>
+                            <div className="bg-white dark:bg-surface-200 rounded-lg shadow-md p-6 mb-6" data-aos="fade-left">
+                                <h3 className="text-2xl font-bold mb-2 text-primary-400 dark:text-primary-300">{selectedMessage.subject}</h3>
+                                <p className="text-surface-500 dark:text-surface-400 mb-4">{`Kimdan: ${selectedMessage.sender}`}</p>
                                 <div
-                                    className="text-text-light dark:text-text-dark mb-6 leading-relaxed"
+                                    className="text-surface-700 dark:text-surface-100 mb-6 leading-relaxed"
                                     dangerouslySetInnerHTML={{ __html: selectedMessage.content }}
                                 />
                             </div>

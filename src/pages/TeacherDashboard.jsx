@@ -6,13 +6,13 @@ const TeacherDashboard = () => {
     const isTeacher = useTeacherAuth();
 
     if (!isTeacher) {
-        return <div>Sizda bu sahifaga kirish huquqi yo&apos;q.</div>;
+        return <div className="text-text-light dark:text-text-dark">Sizda bu sahifaga kirish huquqi yo&apos;q.</div>;
     }
 
     return (
         <DashboardLayout>
             <div className="container mx-auto p-4">
-                <h1 className="text-2xl font-bold mb-4 text-black dark:text-white">O&apos;qituvchi boshqaruv paneli</h1>
+                <h1 className="text-2xl font-bold mb-4 text-text-light dark:text-text-dark">O&apos;qituvchi boshqaruv paneli</h1>
                 <Outlet />
             </div>
         </DashboardLayout>

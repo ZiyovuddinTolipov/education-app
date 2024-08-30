@@ -9,31 +9,32 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: "#10B981", // Emerald
-          dark: "#059669", // Darker Emerald
+          light: '#006400', // Dark green
+          dark: '#008000', // Slightly lighter green for dark mode
         },
         secondary: {
-          light: "#34D399", // Light Emerald
-          dark: "#047857", // Dark Emerald
+          light: '#00FF00', // Electric green
+          dark: '#32CD32', // Lime green for dark mode
         },
         background: {
-          light: "#F3F4F6", // Light gray
-          dark: "#1F2937", // Dark blue-gray
+          light: '#FFFFFF', // White
+          dark: '#000000', // Black
         },
         text: {
-          light: "#1F2937", // Dark gray
-          dark: "#F9FAFB", // Very light gray
+          light: '#000000', // Black
+          dark: '#FFFFFF', // White
         },
-        card: {
-          light: "#FFFFFF", // White
-          dark: "#374151", // Darker blue-gray
+        surface: {
+          light: '#F0FFF0', // Honeydew (very light green)
+          dark: '#1A1A1A', // Very dark gray (almost black)
         },
-      },
-      backgroundImage: {
-        'gradient-light': 'linear-gradient(to right, #10B981, #34D399)',
-        'gradient-dark': 'linear-gradient(to right, #059669, #047857)',
+        accent: {
+          light: '#90EE90', // Light green
+          dark: '#228B22', // Forest green
+        },
       },
     },
   },
   darkMode: 'class',
+  plugins: [],
 };

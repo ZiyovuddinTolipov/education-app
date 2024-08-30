@@ -42,7 +42,7 @@ const TeacherGrading = () => {
     const uniqueGroups = [...new Set(students.map(student => student.group))];
 
     return (
-        <div className="p-4 sm:p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg" data-aos="fade-up">
+        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg" data-aos="fade-up">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-primary-light dark:text-primary-dark">O&apos;quvchilarni baholash</h2>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6">
@@ -51,16 +51,16 @@ const TeacherGrading = () => {
                         <input
                             type="text"
                             placeholder="Qidirish..."
-                            className="w-full sm:w-auto pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full sm:w-auto pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
-                        <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light dark:text-text-dark" />
                     </div>
                     
                     <div className="relative">
                         <select
-                            className="w-full sm:w-auto pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none"
+                            className="w-full sm:w-auto pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark appearance-none bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
                             value={filterGroup}
                             onChange={(e) => setFilterGroup(e.target.value)}
                         >
@@ -69,7 +69,7 @@ const TeacherGrading = () => {
                                 <option key={group} value={group}>{group}</option>
                             ))}
                         </select>
-                        <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light dark:text-text-dark" />
                     </div>
                 </div>
             </div>
@@ -77,29 +77,29 @@ const TeacherGrading = () => {
             <div className="overflow-x-auto -mx-4 sm:-mx-6">
                 <div className="inline-block min-w-full py-2 align-middle">
                     <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
-                        <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
+                        <table className="min-w-full divide-y divide-accent-light dark:divide-accent-dark">
                             <thead className="bg-primary-light dark:bg-primary-dark">
                                 <tr>
-                                    <th scope="col" className="py-3 pl-4 pr-3 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
-                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Ism</th>
-                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Guruh</th>
-                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Baho</th>
+                                    <th scope="col" className="py-3 pl-4 pr-3 text-left text-xs font-medium text-text-light dark:text-text-dark uppercase tracking-wider">ID</th>
+                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-text-light dark:text-text-dark uppercase tracking-wider">Ism</th>
+                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-text-light dark:text-text-dark uppercase tracking-wider">Guruh</th>
+                                    <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-text-light dark:text-text-dark uppercase tracking-wider">Baho</th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white dark:bg-gray-700 divide-y divide-gray-200 dark:divide-gray-600">
+                            <tbody className="bg-background-light dark:bg-background-dark divide-y divide-accent-light dark:divide-accent-dark">
                                 {filteredStudents.map((student, index) => (
                                     <tr key={student.id} data-aos="fade-left" data-aos-delay={index * 100}>
-                                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100">{student.id}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-300">{student.name}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-300">{student.group}</td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-300">
+                                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-text-light dark:text-text-dark">{student.id}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-text-light dark:text-text-dark">{student.name}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-text-light dark:text-text-dark">{student.group}</td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-text-light dark:text-text-dark">
                                             <input 
                                                 type="number" 
                                                 min="0" 
                                                 max="100" 
                                                 value={grades[student.id] || ''} 
                                                 onChange={(e) => handleGradeChange(student.id, e.target.value)}
-                                                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100"
+                                                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
                                             />
                                         </td>
                                     </tr>
@@ -110,8 +110,8 @@ const TeacherGrading = () => {
                 </div>
             </div>
             <button 
-                onClick={submitGrades}
-                className="mt-6 w-full sm:w-auto bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors flex items-center justify-center shadow-md"
+                onClick={submitGrades} 
+                className="mt-6 w-full sm:w-auto bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark px-6 py-3 rounded-full hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors flex items-center justify-center shadow-md"
                 data-aos="fade-up"
             >
                 <MdSave className="mr-2" />

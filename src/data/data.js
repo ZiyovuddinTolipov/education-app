@@ -4,7 +4,7 @@ export const messagesData = [
         sender: "Aziz Yoldoshev",
         subject: "Dars jadvali o'zgarishi",
         content:
-            "<p>Assalomu alaykum, hurmatli talabalar! Ertangi kundan boshlab dars jadvalida <strong>o'zgarishlar</strong> bo'lishini ma'lum qilmoqchiman...</p>",
+            "<p>Assalomu alaykum, hurmatli talabalar! Ertangi kundan boshlanib dars jadvalida <strong>o'zgarishlar</strong> bo'lishini ma'lum qilmoqchiman...</p>",
         unread: true,
     },
     {
@@ -160,3 +160,104 @@ export const messagesData = [
         unread: false,
     },
 ];
+export const profileData = {
+    name: 'Abdulla Qodirov',
+    email: 'abdulla.qodirov@example.com',
+    phone: '+998 90 123 45 67',
+    position: "Katta o'qituvchi",
+    username: 'abdulla_qodirov',
+    bio: "O'qituvchi, 10 yillik tajriba. Matematika va fizika fanlari bo'yicha mutaxassis. Ilmiy-tadqiqot ishlari va maqolalar muallifi.",
+    image: 'https://via.placeholder.com/150',
+    subject: 'Matematika va Fizika',
+    experience: '10 yil',
+    education: [
+        {
+            degree: "Doktorantura",
+            field: "Matematik fizika",
+            institution: "O'zbekiston Milliy Universiteti",
+            year: "2015-2018"
+        },
+        {
+            degree: "Magistratura",
+            field: "Amaliy matematika",
+            institution: "O'zbekiston Milliy Universiteti",
+            year: "2010-2012"
+        },
+        {
+            degree: "Bakalavr",
+            field: "Matematika",
+            institution: "O'zbekiston Milliy Universiteti",
+            year: "2006-2010"
+        }
+    ],
+    publications: [
+        {
+            title: "Nochiziqli differensial tenglamalar yechimlarining asimptotik xossalari",
+            journal: "O'zbekiston Matematika Jurnali",
+            year: 2020
+        },
+        {
+            title: "Matematik modellashtirish usullari va ularning amaliy tadbiqi",
+            journal: "Ilm-fan va Innovatsion Rivojlanish",
+            year: 2018
+        }
+    ],
+    courses: [
+        "Matematik analiz",
+        "Differensial tenglamalar",
+        "Ehtimollar nazariyasi va matematik statistika",
+        "Fizika asoslari"
+    ],
+    skills: [
+        "MATLAB",
+        "LaTeX",
+        "Python",
+        "R dasturlash tili",
+        "Statistik tahlil"
+    ],
+    languages: [
+        {
+            language: "O'zbek tili",
+            level: "Ona tili"
+        },
+        {
+            language: "Rus tili",
+            level: "Professional darajada"
+        },
+        {
+            language: "Ingliz tili",
+            level: "Yuqori daraja (C1)"
+        }
+    ],
+    awards: [
+        {
+            title: "Yilning eng yaxshi o'qituvchisi",
+            year: 2019,
+            organization: "O'zbekiston Respublikasi Oliy va O'rta Maxsus Ta'lim Vazirligi"
+        },
+        {
+            title: "Innovatsion ta'lim texnologiyalari bo'yicha grant g'olibi",
+            year: 2017,
+            organization: "O'zbekiston Fanlar Akademiyasi"
+        }
+    ],
+    projects: [
+        {
+            title: "Noaniq muhitda qaror qabul qilish modellarini ishlab chiqish",
+            role: "Loyiha rahbari",
+            year: "2020-hozirgi vaqtgacha",
+            description: "Noaniq ma'lumotlar asosida optimal qarorlar qabul qilish uchun yangi matematik modellar va algoritmlar ishlab chiqish."
+        },
+        {
+            title: "Talabalar uchun interaktiv matematika platformasi",
+            role: "Asosiy ishlab chiquvchi",
+            year: "2018-2019",
+            description: "Onlayn ta'lim platformasi yaratish, unda talabalar interaktiv mashqlar va vizualizatsiyalar orqali matematikani o'rganadilar."
+        }
+    ],
+    socialMedia: {
+        linkedin: "https://www.linkedin.com/in/abdulla-qodirov",
+        researchGate: "https://www.researchgate.net/profile/Abdulla_Qodirov",
+        googleScholar: "https://scholar.google.com/citations?user=AbdullaQodirov"
+    }
+};

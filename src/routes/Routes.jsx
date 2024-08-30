@@ -6,12 +6,14 @@ import LabAssignment from '@/components/LabAssignment';
 import TestUpload from '@/components/TestUpload';
 import TopicCreation from '@/components/TopicCreation';
 import Messages from '@/pages/Messages';
+import Profile from '@/pages/Profile';  // Add this import
 
 export default function AppRoutes() {
     const routes = useRoutes([
         { path: '/', element: <Navigate to="/dashboard" replace /> },
         { path: '/dashboard', element: <Dashboard /> },
         { path: '/messages', element: <Messages /> },
+        { path: '/profile', element: <Profile /> },  // Add this route
         { 
             path: '/teacher', 
             element: <TeacherDashboard />,
