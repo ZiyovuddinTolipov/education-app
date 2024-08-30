@@ -136,7 +136,7 @@ const ProfileForm = ({ user, onInputChange, onSubmit, onCancel }) => {
             </div>
 
             <div>
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Ta'lim</h3>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">Ta&apos;lim</h3>
                 {user.education.map((edu, index) => (
                     <div key={index} className="space-y-2 mb-4">
                         <input 
@@ -180,7 +180,7 @@ const ProfileForm = ({ user, onInputChange, onSubmit, onCancel }) => {
                             onClick={() => openConfirmModal('education', index)} 
                             className="text-red-500"
                         >
-                            <MdDelete /> O'chirish
+                            <MdDelete /> O&apos;chirish
                         </button>
                     </div>
                 ))}
@@ -189,7 +189,7 @@ const ProfileForm = ({ user, onInputChange, onSubmit, onCancel }) => {
                     onClick={() => addArrayItem('education', { degree: '', field: '', institution: '', year: '' })} 
                     className="text-blue-500"
                 >
-                    <MdAdd /> Ta'lim qo'shish
+                    <MdAdd /> Ta&apos;lim qo&apos;shish
                 </button>
             </div>
 
@@ -201,7 +201,7 @@ const ProfileForm = ({ user, onInputChange, onSubmit, onCancel }) => {
                     onClick={() => setShowPasswordChange(!showPasswordChange)} 
                     className="text-blue-500"
                 >
-                    Parolni o'zgartirish
+                    Parolni o&apos;zgartirish
                 </button>
                 {showPasswordChange && (
                     <input 
