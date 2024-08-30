@@ -22,9 +22,9 @@ const DashboardLayout = ({ children }) => {
                 toggleSidebar={toggleSidebar} 
                 isDarkMode={theme === 'dark'}
             />
-            <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 relative ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
-                <header className="bg-surface-light dark:bg-surface-dark shadow-md sticky top-0 z-50">
-                    <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
+                <header className="bg-surface-light dark:bg-surface-dark shadow-md fixed top-0 left-0 right-0 z-50">
+                    <div className={`max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
                         <h1 className="text-2xl font-semibold text-text-light dark:text-text-dark">Dashboard</h1>
                         <div className="flex items-center space-x-4">
                             <Link to="/messages" className="relative">
@@ -44,7 +44,7 @@ const DashboardLayout = ({ children }) => {
                         </div>
                     </div>
                 </header>
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark">
+                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark mt-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         {children}
                     </div>

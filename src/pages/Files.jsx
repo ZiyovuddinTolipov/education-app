@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaFileAlt, FaFilePdf, FaFileWord, FaFileExcel, FaFileArchive, FaFile, FaDownload } from 'react-icons/fa';
+import { FaFilePdf, FaFileWord, FaFileExcel, FaFileArchive, FaFile, FaDownload } from 'react-icons/fa';
 import { filesData } from '../data/data';
 import DashboardLayout from '../layouts/DashboardLayout';
 
