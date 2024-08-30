@@ -123,7 +123,7 @@ const MobileDropdownMenu = ({ icon: Icon, text, items, isActive }) => {
             </button>
             {isOpen && (
                 <ul 
-                    className="absolute bottom-full -left-[110px] w-48 bg-surface-light dark:bg-surface-dark shadow-lg rounded-t-md overflow-hidden transform -translate-x-1/2"
+                    className="absolute bottom-full -left-[20px] w-48 bg-surface-light dark:bg-surface-dark shadow-lg rounded-t-md overflow-hidden transform -translate-x-1/2"
 
                 >
                     {items.map((item, index) => {
