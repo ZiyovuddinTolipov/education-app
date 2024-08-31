@@ -55,7 +55,7 @@ const TopicCreation = () => {
                 className="w-full mb-2 p-2 border rounded h-24 sm:h-32 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm sm:text-base"
             />
             <button 
-                className="mt-4 px-3 py-1 sm:px-4 sm:py-2 bg-primary-light hover:bg-secondary-light text-text-light rounded-md transition duration-300 ease-in-out dark:bg-primary-dark dark:hover:bg-secondary-dark dark:text-text-dark text-sm sm:text-base"
+                className="mt-4 px-3 py-1 sm:px-4 sm:py-2 bg-primary-light hover:bg-secondary-light text-white rounded-md transition duration-300 ease-in-out dark:bg-primary-dark dark:hover:bg-secondary-dark dark:text-text-dark text-sm sm:text-base"
                 onClick={createTopic}
             >
                 Mavzuni yaratish
