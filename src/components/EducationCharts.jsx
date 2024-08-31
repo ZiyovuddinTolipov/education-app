@@ -133,29 +133,6 @@ const EducationCharts = () => {
                 />
             </div>
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                <h3 className="text-lg font-semibold mb-2 text-center">Bitirish darajasi</h3>
-                <Line 
-                    data={{
-                        labels: educationStats.graduationRate.labels,
-                        datasets: [{
-                            label: 'Bitirish darajasi (%)',
-                            data: educationStats.graduationRate.data,
-                            borderColor: '#FF9800',
-                            tension: 0.1
-                        }]
-                    }} 
-                    options={{
-                        ...lineChartOptions,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100,
-                            },
-                        },
-                    }}
-                />
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                 <h3 className="text-lg font-semibold mb-2 text-center">Sinflar bo&apos;yicha statistika</h3>
                 <Bar 
                     data={{
