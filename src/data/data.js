@@ -1,19 +1,124 @@
 export const filesData = [
-    { id: 1, name: 'Dars jadvali 2023', description: 'Joriy yil uchun dars jadvali', downloadUrl: '#', category: 'Dars jadvali', createdAt: '2023-01-15T08:00:00Z' },
-    { id: 2, name: 'Baholash mezonlari', description: 'Fanlar bo\'yicha baholash mezonlari', downloadUrl: '#', category: 'O\'quv jarayoni', createdAt: '2023-02-01T10:30:00Z' },
-    { id: 3, name: 'Ilmiy anjuman dasturi', description: 'Xalqaro ilmiy anjuman dasturi', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-03-10T14:45:00Z' },
-    { id: 4, name: 'Stipendiya dasturi hujjatlari', description: 'Ariza va boshqa zarur hujjatlar', downloadUrl: '#', category: 'Stipendiya', createdAt: '2023-04-05T09:15:00Z' },
-    { id: 5, name: 'Laboratoriya yo\'riqnomasi', description: 'Yangi jihozlardan foydalanish bo\'yicha yo\'riqnoma', downloadUrl: '#', category: 'Laboratoriya', createdAt: '2023-04-20T11:00:00Z' },
-    { id: 6, name: 'Kitobxonlik haftaligi dasturi', description: 'Tadbirlar va taqdimotlar ro\'yxati', downloadUrl: '#', category: 'Madaniy tadbirlar', createdAt: '2023-05-02T13:30:00Z' },
-    { id: 7, name: 'Onlayn ta\'lim qo\'llanmasi', description: 'Platformadan foydalanish bo\'yicha qo\'llanma', downloadUrl: '#', category: 'Onlayn ta\'lim', createdAt: '2023-05-15T10:00:00Z' },
-    { id: 8, name: 'Talabalar almashinuvi dasturi', description: 'Dastur shartlari va ariza topshirish tartibi', downloadUrl: '#', category: 'Xalqaro aloqalar', createdAt: '2023-06-01T09:45:00Z' },
-    { id: 9, name: 'Ilmiy maqola yozish bo\'yicha tavsiyalar', description: 'Maqola tayyorlash va nashr etish bo\'yicha ko\'rsatmalar', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-06-20T15:30:00Z' },
-    { id: 10, name: 'Yangi o\'quv dasturi', description: 'Kelgusi o\'quv yili uchun yangilangan dastur', downloadUrl: '#', category: 'O\'quv jarayoni', createdAt: '2023-07-05T11:15:00Z' },
-    { id: 11, name: 'Sport musobaqalari jadvali', description: 'Universitetlararo sport musobaqalari jadvali', downloadUrl: '#', category: 'Sport', createdAt: '2023-07-20T14:00:00Z' },
-    { id: 12, name: 'Magistratura dasturlari haqida ma\'lumot', description: 'Dasturlar tavsifi va qabul talablari', downloadUrl: '#', category: 'Magistratura', createdAt: '2023-08-01T10:30:00Z' },
-    { id: 13, name: 'Grant loyihasi taklifi namunasi', description: 'Ilmiy grant loyihasi taklifi tayyorlash uchun namuna', downloadUrl: '#', category: 'Ilmiy faoliyat', createdAt: '2023-08-15T09:00:00Z' },
-    { id: 14, name: 'Chet tili kurslari jadvali', description: 'Qo\'shimcha chet tili kurslari jadvali', downloadUrl: '#', category: 'Til o\'rganish', createdAt: '2023-09-01T13:45:00Z' },
-    { id: 15, name: 'Amaliyot dasturi yo\'riqnomasi', description: 'Yozgi amaliyot o\'tash tartibi haqida yo\'riqnoma', downloadUrl: '#', category: 'Amaliyot', createdAt: '2023-09-15T11:30:00Z' },
+    {
+        id: 1,
+        name: "Dars jadvali 2023",
+        description: "Joriy yil uchun dars jadvali",
+        downloadUrl: "#",
+        category: "Dars jadvali",
+        createdAt: "2023-01-15T08:00:00Z",
+    },
+    {
+        id: 2,
+        name: "Baholash mezonlari",
+        description: "Fanlar bo'yicha baholash mezonlari",
+        downloadUrl: "#",
+        category: "O'quv jarayoni",
+        createdAt: "2023-02-01T10:30:00Z",
+    },
+    {
+        id: 3,
+        name: "Ilmiy anjuman dasturi",
+        description: "Xalqaro ilmiy anjuman dasturi",
+        downloadUrl: "#",
+        category: "Ilmiy faoliyat",
+        createdAt: "2023-03-10T14:45:00Z",
+    },
+    {
+        id: 4,
+        name: "Stipendiya dasturi hujjatlari",
+        description: "Ariza va boshqa zarur hujjatlar",
+        downloadUrl: "#",
+        category: "Stipendiya",
+        createdAt: "2023-04-05T09:15:00Z",
+    },
+    {
+        id: 5,
+        name: "Laboratoriya yo'riqnomasi",
+        description: "Yangi jihozlardan foydalanish bo'yicha yo'riqnoma",
+        downloadUrl: "#",
+        category: "Laboratoriya",
+        createdAt: "2023-04-20T11:00:00Z",
+    },
+    {
+        id: 6,
+        name: "Kitobxonlik haftaligi dasturi",
+        description: "Tadbirlar va taqdimotlar ro'yxati",
+        downloadUrl: "#",
+        category: "Madaniy tadbirlar",
+        createdAt: "2023-05-02T13:30:00Z",
+    },
+    {
+        id: 7,
+        name: "Onlayn ta'lim qo'llanmasi",
+        description: "Platformadan foydalanish bo'yicha qo'llanma",
+        downloadUrl: "#",
+        category: "Onlayn ta'lim",
+        createdAt: "2023-05-15T10:00:00Z",
+    },
+    {
+        id: 8,
+        name: "Talabalar almashinuvi dasturi",
+        description: "Dastur shartlari va ariza topshirish tartibi",
+        downloadUrl: "#",
+        category: "Xalqaro aloqalar",
+        createdAt: "2023-06-01T09:45:00Z",
+    },
+    {
+        id: 9,
+        name: "Ilmiy maqola yozish bo'yicha tavsiyalar",
+        description: "Maqola tayyorlash va nashr etish bo'yicha ko'rsatmalar",
+        downloadUrl: "#",
+        category: "Ilmiy faoliyat",
+        createdAt: "2023-06-20T15:30:00Z",
+    },
+    {
+        id: 10,
+        name: "Yangi o'quv dasturi",
+        description: "Kelgusi o'quv yili uchun yangilangan dastur",
+        downloadUrl: "#",
+        category: "O'quv jarayoni",
+        createdAt: "2023-07-05T11:15:00Z",
+    },
+    {
+        id: 11,
+        name: "Sport musobaqalari jadvali",
+        description: "Universitetlararo sport musobaqalari jadvali",
+        downloadUrl: "#",
+        category: "Sport",
+        createdAt: "2023-07-20T14:00:00Z",
+    },
+    {
+        id: 12,
+        name: "Magistratura dasturlari haqida ma'lumot",
+        description: "Dasturlar tavsifi va qabul talablari",
+        downloadUrl: "#",
+        category: "Magistratura",
+        createdAt: "2023-08-01T10:30:00Z",
+    },
+    {
+        id: 13,
+        name: "Grant loyihasi taklifi namunasi",
+        description: "Ilmiy grant loyihasi taklifi tayyorlash uchun namuna",
+        downloadUrl: "#",
+        category: "Ilmiy faoliyat",
+        createdAt: "2023-08-15T09:00:00Z",
+    },
+    {
+        id: 14,
+        name: "Chet tili kurslari jadvali",
+        description: "Qo'shimcha chet tili kurslari jadvali",
+        downloadUrl: "#",
+        category: "Til o'rganish",
+        createdAt: "2023-09-01T13:45:00Z",
+    },
+    {
+        id: 15,
+        name: "Amaliyot dasturi yo'riqnomasi",
+        description: "Yozgi amaliyot o'tash tartibi haqida yo'riqnoma",
+        downloadUrl: "#",
+        category: "Amaliyot",
+        createdAt: "2023-09-15T11:30:00Z",
+    },
 ];
 export const messagesData = [
     {
@@ -179,104 +284,185 @@ export const messagesData = [
 ];
 
 export const profileData = {
-    name: 'Abdulla Qodirov',
-    email: 'abdulla.qodirov@example.com',
-    phone: '+998 90 123 45 67',
+    name: "Abdulla Qodirov",
+    email: "abdulla.qodirov@example.com",
+    phone: "+998 90 123 45 67",
     position: "Katta o'qituvchi",
-    username: 'abdulla_qodirov',
+    username: "abdulla_qodirov",
     bio: "O'qituvchi, 10 yillik tajriba. Matematika va fizika fanlari bo'yicha mutaxassis. Ilmiy-tadqiqot ishlari va maqolalar muallifi.",
-    image: 'https://via.placeholder.com/150',
-    subject: 'Matematika va Fizika',
-    experience: '10 yil',
+    image: "https://via.placeholder.com/150",
+    subject: "Matematika va Fizika",
+    experience: "10 yil",
     education: [
         {
             degree: "Doktorantura",
             field: "Matematik fizika",
             institution: "O'zbekiston Milliy Universiteti",
-            year: "2015-2018"
+            year: "2015-2018",
         },
         {
             degree: "Magistratura",
             field: "Amaliy matematika",
             institution: "O'zbekiston Milliy Universiteti",
-            year: "2010-2012"
+            year: "2010-2012",
         },
         {
             degree: "Bakalavr",
             field: "Matematika",
             institution: "O'zbekiston Milliy Universiteti",
-            year: "2006-2010"
-        }
+            year: "2006-2010",
+        },
     ],
     publications: [
         {
-            title: "Nochiziqli differensial tenglamalar yechimlarining asimptotik xossalari",
+            title:
+                "Nochiziqli differensial tenglamalar yechimlarining asimptotik xossalari",
             journal: "O'zbekiston Matematika Jurnali",
-            year: 2020
+            year: 2020,
         },
         {
             title: "Matematik modellashtirish usullari va ularning amaliy tadbiqi",
             journal: "Ilm-fan va Innovatsion Rivojlanish",
-            year: 2018
-        }
+            year: 2018,
+        },
     ],
     courses: [
         "Matematik analiz",
         "Differensial tenglamalar",
         "Ehtimollar nazariyasi va matematik statistika",
-        "Fizika asoslari"
+        "Fizika asoslari",
     ],
     skills: [
         "MATLAB",
         "LaTeX",
         "Python",
         "R dasturlash tili",
-        "Statistik tahlil"
+        "Statistik tahlil",
     ],
     languages: [
         {
             language: "O'zbek tili",
-            level: "Ona tili"
+            level: "Ona tili",
         },
         {
             language: "Rus tili",
-            level: "Professional darajada"
+            level: "Professional darajada",
         },
         {
             language: "Ingliz tili",
-            level: "Yuqori daraja (C1)"
-        }
+            level: "Yuqori daraja (C1)",
+        },
     ],
     awards: [
         {
             title: "Yilning eng yaxshi o'qituvchisi",
             year: 2019,
-            organization: "O'zbekiston Respublikasi Oliy va O'rta Maxsus Ta'lim Vazirligi"
+            organization:
+                "O'zbekiston Respublikasi Oliy va O'rta Maxsus Ta'lim Vazirligi",
         },
         {
             title: "Innovatsion ta'lim texnologiyalari bo'yicha grant g'olibi",
             year: 2017,
-            organization: "O'zbekiston Fanlar Akademiyasi"
-        }
+            organization: "O'zbekiston Fanlar Akademiyasi",
+        },
     ],
     projects: [
         {
             title: "Noaniq muhitda qaror qabul qilish modellarini ishlab chiqish",
             role: "Loyiha rahbari",
             year: "2020-hozirgi vaqtgacha",
-            description: "Noaniq ma'lumotlar asosida optimal qarorlar qabul qilish uchun yangi matematik modellar va algoritmlar ishlab chiqish."
+            description:
+                "Noaniq ma'lumotlar asosida optimal qarorlar qabul qilish uchun yangi matematik modellar va algoritmlar ishlab chiqish.",
         },
         {
             title: "Talabalar uchun interaktiv matematika platformasi",
             role: "Asosiy ishlab chiquvchi",
             year: "2018-2019",
-            description: "Onlayn ta'lim platformasi yaratish, unda talabalar interaktiv mashqlar va vizualizatsiyalar orqali matematikani o'rganadilar."
-        }
+            description:
+                "Onlayn ta'lim platformasi yaratish, unda talabalar interaktiv mashqlar va vizualizatsiyalar orqali matematikani o'rganadilar.",
+        },
     ],
     socialMedia: {
         linkedin: "https://www.linkedin.com/in/abdulla-qodirov",
         researchGate: "https://www.researchgate.net/profile/Abdulla_Qodirov",
-        googleScholar: "https://scholar.google.com/citations?user=AbdullaQodirov"
-    }
+        googleScholar: "https://scholar.google.com/citations?user=AbdullaQodirov",
+    },
 };
 
+export const educationData = [
+    {
+        id: 1,
+        student: "Aziz Yoldoshev",
+        class: "10-A",
+        attendance: "95%",
+        grade: "A",
+        subject: "Matematika",
+        lastAttended: "2023-05-15",
+    },
+    {
+        id: 2,
+        student: "Malika Karimova",
+        class: "11-B",
+        attendance: "92%",
+        grade: "B+",
+        subject: "Fizika",
+        lastAttended: "2023-05-14",
+    },
+    {
+        id: 3,
+        student: "Botir Qodirov",
+        class: "9-C",
+        attendance: "88%",
+        grade: "B",
+        subject: "Kimyo",
+        lastAttended: "2023-05-13",
+    },
+    // Boshqa o'quvchilar ma'lumotlarini qo'shing...
+];
+
+export const educationStats = {
+    attendance: {
+        labels: ["Qatnashgan", "Qatnashmagan"],
+        data: [85, 15],
+    },
+    grades: {
+        labels: ["A", "B", "C", "D", "F"],
+        data: [30, 25, 20, 15, 10],
+    },
+    subjects: {
+        labels: [
+            "Matematika",
+            "Fizika",
+            "Kimyo",
+            "Biologiya",
+            "Tarix",
+            "Adabiyot",
+            "Ingliz tili",
+        ],
+        data: [4.5, 4.2, 3.8, 4.0, 3.9, 4.1, 4.3],
+    },
+    genderDistribution: {
+        labels: ["Erkaklar", "Ayollar"],
+        data: [55, 45],
+    },
+    studentsByFaculty: {
+        labels: [
+            "Iqtisodiyot",
+            "Huquqshunoslik",
+            "Tibbiyot",
+            "Muhandislik",
+            "Pedagogika",
+        ],
+        data: [300, 250, 400, 350, 200],
+    },
+    graduationRate: {
+        labels: ["2019", "2020", "2021", "2022", "2023"],
+        data: [92, 94, 91, 95, 93],
+    },
+    classesSummary: {
+        labels: ["9-sinf", "10-sinf", "11-sinf"],
+        averageAttendance: [90, 88, 92],
+        averageGrade: [3.8, 4.0, 4.2],
+        studentCount: [150, 130, 120],
+    },
+};

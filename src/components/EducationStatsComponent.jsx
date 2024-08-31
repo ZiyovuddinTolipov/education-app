@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { FaUserGraduate, FaBook, FaClock, FaSearch, FaFilter } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import EducationCharts from '@/components/EducationCharts';
+import { educationData } from '@/data/data';
 
 const EducationStatsComponent = () => {
     const [selectedTab, setSelectedTab] = useState('attendance');
@@ -11,54 +13,6 @@ const EducationStatsComponent = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
-
-    const educationData = [
-        {
-            id: '1',
-            student: 'Aziz Rahimov',
-            class: '9-A',
-            attendance: '95%',
-            grade: '4.5',
-            subject: 'Matematika',
-            lastAttended: '2023-05-15',
-        },
-        {
-            id: '2',
-            student: 'Malika Karimova',
-            class: '10-B',
-            attendance: '98%',
-            grade: '4.8',
-            subject: 'Fizika',
-            lastAttended: '2023-05-16',
-        },
-        {
-            id: '3',
-            student: 'Jasur Aliyev',
-            class: '11-A',
-            attendance: '92%',
-            grade: '4.2',
-            subject: 'Kimyo',
-            lastAttended: '2023-05-14',
-        },
-        {
-            id: '4',
-            student: 'Nilufar Saidova',
-            class: '9-B',
-            attendance: '97%',
-            grade: '4.7',
-            subject: 'Biologiya',
-            lastAttended: '2023-05-16',
-        },
-        {
-            id: '5',
-            student: 'Rustam Xolmatov',
-            class: '10-A',
-            attendance: '94%',
-            grade: '4.4',
-            subject: 'Tarix',
-            lastAttended: '2023-05-15',
-        },
-    ];
 
     const filteredData = educationData.filter(data => {
         return (
@@ -71,7 +25,7 @@ const EducationStatsComponent = () => {
     const uniqueClasses = [...new Set(educationData.map(data => data.class))];
 
     return (
-        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg" data-aos="fade-up">
+        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg" >
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-primary-light dark:text-primary-dark">Ta&apos;lim statistikasi</h2>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6">
@@ -117,6 +71,10 @@ const EducationStatsComponent = () => {
                         <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light dark:text-text-dark" />
                     </div>
                 </div>
+            </div>
+
+            <div className="h-[800px] overflow-y-auto"> {/* h-[600px] o'rniga h-[800px] */}
+                <EducationCharts />
             </div>
 
             {/* Desktop view */}

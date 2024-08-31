@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
     return (
         <>
             {/* Desktop Sidebar */}
-            <aside className={`hidden sm:block bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark h-screen fixed left-0 top-0 overflow-y-auto z-20 transition-all duration-300 ${isOpen ? 'w-64' : 'w-16'}`}>
+            <aside className={`hidden sm:block bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark h-screen fixed left-0 top-0 overflow-y-auto z-[51] transition-all duration-300 ${isOpen ? 'w-64' : 'w-16'}`}>
                 <div className="p-4 flex justify-between items-center bg-primary-light dark:bg-primary-dark">
                     <h2 className={`text-2xl font-bold text-text-light dark:text-text-dark ${isOpen ? 'block' : 'hidden'}`}>EDU CRM</h2>
                     <button onClick={toggleSidebar} className="text-text-light dark:text-text-dark">
@@ -63,7 +63,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
             </aside>
 
             {/* Mobile Bottom Menu */}
-            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark z-50">
+            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark z-[19]">
                 <ul className="flex justify-around items-center h-16">
                     <MobileMenuItem to="/dashboard" icon={MdDashboard} text="Dashboard" isDarkMode={isDarkMode} isActive={location.pathname === '/dashboard'} />
                     <MobileDivider />

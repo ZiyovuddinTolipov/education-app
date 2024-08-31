@@ -49,7 +49,6 @@ const Messages = () => {
         setIsMobileMessageListVisible(true);
         setSelectedMessage(null);
     };
-
     const handleReply = () => {
         console.log('Javob yuborildi:', reply);
         setReply('');
