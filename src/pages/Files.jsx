@@ -93,7 +93,7 @@ const Files = () => {
                         {filteredFiles.map((file) => {
                             const FileIcon = getFileIcon(file.category);
                             return (
-                                <div key={file.id} className="bg-surface-light dark:bg-surface-dark rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 flex flex-col">
+                                <div key={file.id} className="bg-white dark:bg-surface-dark rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 flex flex-col">
                                     <div className="p-6 flex-grow">
                                         <FileIcon className="text-5xl text-primary-light dark:text-primary-dark mb-4 mx-auto" />
                                         <h3 className="text-xl font-semibold mb-2 text-text-light dark:text-text-dark">{file.name}</h3>
