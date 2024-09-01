@@ -21,7 +21,7 @@ const TopicCreation = () => {
     };
 
     return (
-        <div className="bg-surface-light dark:bg-surface-dark p-4 pb-10 sm:p-6 rounded-lg shadow-lg max-w-full">
+        <div className="bg-surface-light dark:bg-surface-dark p-4 pb-10 sm:p-6 rounded-lg shadow-lg max-w-3xl">
             <h2 className="text-lg sm:text-xl font-semibold mb-4 flex items-center text-primary-light dark:text-primary-dark">
                 <MdTopic className="mr-2" />
                 Mavzu yaratish

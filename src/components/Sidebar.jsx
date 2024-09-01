@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import { Link, useLocation } from 'react-router-dom';
-import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdTopic, MdMenu, MdClose,  MdExpandMore, MdExpandLess } from 'react-icons/md';
+import { useLocation, Link } from 'react-router-dom';
+import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdTopic, MdMenu, MdClose } from 'react-icons/md';
 import { useState } from 'react';
-import { IoDocuments  } from "react-icons/io5";
+import { IoDocuments } from "react-icons/io5";
+import { useAuth } from '@/context/AuthProvider';
 
-const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
     const location = useLocation();
+    const { user } = useAuth();
     const [isTeacherMenuOpen, setIsTeacherMenuOpen] = useState(false);
 
-    const toggleTeacherMenu = () => setIsTeacherMenuOpen(!isTeacherMenuOpen);
+    const toggleTeacherMenu = () => setIsTeacherMenuOpen((prev) => !prev);
 
     const teacherMenuItems = [
         { to: "/teacher/grading", icon: MdSchool, text: "Baholash" },
@@ -16,6 +18,13 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
         { to: "/teacher/test", icon: MdQuiz, text: "Test yuklash" },
         { to: "/teacher/topic", icon: MdTopic, text: "Mavzu yaratish" },
     ];
+
+    const commonMenuItems = [
+        { to: "/dashboard", icon: MdDashboard, text: "Dashboard" },
+        { to: "/files", icon: IoDocuments, text: "Fayllar" },
+    ];
+
+    const menuItems = user?.role === 'teacher' ? [...commonMenuItems, { text: "Teacher Menu", items: teacherMenuItems }] : commonMenuItems;
 
     return (
         <>
@@ -29,35 +38,44 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
                 </div>
                 <nav className="mt-8">
                     <ul>
-                        <SidebarItem to="/dashboard" icon={MdDashboard} text="Dashboard" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/dashboard'} />
-                        <SidebarDivider isOpen={isOpen} />
-                        <SidebarItem to="/files" icon={IoDocuments } text="Fayllar" isOpen={isOpen} isDarkMode={isDarkMode} isActive={location.pathname === '/files'} />
-                        <SidebarDivider isOpen={isOpen} />
-                        <li className="mb-4">
-                            <button
-                                onClick={toggleTeacherMenu}
-                                className={`flex items-center p-2 rounded w-full ${isOpen ? '' : 'justify-center'}`}
-                            >
-                                <MdSchool size={20} />
-                                {isOpen && <span className="ml-2">O&apos;qituvchi</span>}
-                                {isOpen && (isTeacherMenuOpen ? <MdExpandLess size={20} className="ml-auto" /> : <MdExpandMore size={20} className="ml-auto" />)}
-                            </button>
-                            {isTeacherMenuOpen && (
-                                <ul className="ml-4">
-                                    {teacherMenuItems.map((item) => (
-                                        <SidebarItem
-                                            key={item.to}
-                                            to={item.to}
-                                            icon={item.icon}
-                                            text={item.text}
-                                            isOpen={isOpen}
-                                            isDarkMode={isDarkMode}
-                                            isActive={location.pathname === item.to}
-                                        />
-                                    ))}
-                                </ul>
-                            )}
-                        </li>
+                        {menuItems.map((item) => (
+                            item.items ? (
+                                <li key={item.text}>
+                                    <button onClick={toggleTeacherMenu} className="flex items-center p-2 rounded hover:bg-surface-light dark:hover:bg-surface-dark">
+                                        <span className="ml-2">{item.text}</span>
+                                    </button>
+                                    {isTeacherMenuOpen && (
+                                        <ul className="ml-4">
+                                            {item.items.map((subItem) => (
+                                                <li key={subItem.to} className="mb-4">
+                                                    <Link
+                                                        to={subItem.to}
+                                                        className={`flex items-center p-2 rounded ${location.pathname === subItem.to
+                                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
+                                                            : 'hover:bg-surface-light dark:hover:bg-surface-dark'} ${isOpen ? '' : 'justify-center'}`}
+                                                    >
+                                                        <subItem.icon size={20} className={location.pathname === subItem.to ? 'text-text-light dark:text-text-dark' : 'text-text-light dark:text-text-dark'} />
+                                                        {isOpen && <span className="ml-2">{subItem.text}</span>}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </li>
+                            ) : (
+                                <li key={item.to} className="mb-4">
+                                    <Link
+                                        to={item.to}
+                                        className={`flex items-center p-2 rounded ${location.pathname === item.to
+                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
+                                            : 'hover:bg-surface-light dark:hover:bg-surface-dark'} ${isOpen ? '' : 'justify-center'}`}
+                                    >
+                                        <item.icon size={20} className={location.pathname === item.to ? 'text-text-light dark:text-text-dark' : 'text-text-light dark:text-text-dark'} />
+                                        {isOpen && <span className="ml-2">{item.text}</span>}
+                                    </Link>
+                                </li>
+                            )
+                        ))}
                     </ul>
                 </nav>
             </aside>
@@ -65,105 +83,44 @@ const Sidebar = ({ isOpen, toggleSidebar, isDarkMode }) => {
             {/* Mobile Bottom Menu */}
             <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark z-[19]">
                 <ul className="flex justify-around items-center h-16">
-                    <MobileMenuItem to="/dashboard" icon={MdDashboard} text="Dashboard" isDarkMode={isDarkMode} isActive={location.pathname === '/dashboard'} />
-                    <MobileDivider />
-                    <MobileMenuItem to="/files" icon={IoDocuments } text="Files" isDarkMode={isDarkMode} isActive={location.pathname === '/files'} />
-                    <MobileDivider />
-                    <MobileDropdownMenu
-                        icon={MdSchool}
-                        text="O'qituvchi"
-                        items={teacherMenuItems}
-                        isDarkMode={isDarkMode}
-                        isActive={teacherMenuItems.some(item => location.pathname === item.to)}
-                    />
+                    {menuItems.map((item) => (
+                        item.items ? (
+                            <li key={item.text}>
+                                <button onClick={toggleTeacherMenu} className="flex flex-col items-center">
+                                    <span className="text-xs">{item.text}</span>
+                                </button>
+                                {isTeacherMenuOpen && (
+                                    <ul className="ml-4">
+                                        {item.items.map((subItem) => (
+                                            <li key={subItem.to} className="mb-4">
+                                                <Link
+                                                    to={subItem.to}
+                                                    className={`flex flex-col items-center ${location.pathname === subItem.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
+                                                >
+                                                    <subItem.icon size={24} className={location.pathname === subItem.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />
+                                                    <span className="text-xs">{subItem.text}</span>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ) : (
+                            <li key={item.to}>
+                                <Link
+                                    to={item.to}
+                                    className={`flex flex-col items-center ${location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
+                                >
+                                    <item.icon size={24} className={location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />
+                                    <span className="text-xs">{item.text}</span>
+                                </Link>
+                            </li>
+                        )
+                    ))}
                 </ul>
             </nav>
         </>
     );
 };
-
-const SidebarItem = ({ to, icon: Icon, text, isOpen, isActive }) => (
-    <li className="mb-4">
-        <Link
-            to={to}
-            className={`flex items-center p-2 rounded ${isActive
-                ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
-                : 'hover:bg-surface-light dark:hover:bg-surface-dark'} ${isOpen ? '' : 'justify-center'}`}
-        >
-            <Icon size={20} className={isActive ? 'text-text-light dark:text-text-dark' : 'text-text-light dark:text-text-dark'} />
-            {isOpen && <span className="ml-2">{text}</span>}
-        </Link>
-    </li>
-);
-
-const MobileMenuItem = ({ to, icon: Icon, text, isActive }) => (
-    <li>
-        <Link
-            to={to}
-            className={`flex flex-col items-center ${isActive ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
-        >
-            <Icon size={24} className={isActive ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />
-            <span className="text-xs">{text}</span>
-        </Link>
-    </li>
-);
-
-const MobileDropdownMenu = ({ icon: Icon, text, items, isActive }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation();
-
-    return (
-        <li className="relative">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className={`flex flex-col items-center ${isActive ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
-            >
-                <Icon size={24} />
-                <span className="text-xs">{text}</span>
-            </button>
-            {isOpen && (
-                <ul 
-                    className="absolute bottom-full -left-[20px] w-48 bg-surface-light dark:bg-surface-dark shadow-lg rounded-t-md overflow-hidden transform -translate-x-1/2"
-
-                >
-                    {items.map((item, index) => {
-                        const isItemActive = location.pathname === item.to;
-                        return (
-                            <li key={item.to}>
-                                <Link
-                                    to={item.to}
-                                    className={`flex items-center p-3 ${
-                                        isItemActive
-                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
-                                            : 'hover:bg-primary-light dark:hover:bg-primary-dark'
-                                    }`}
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    <item.icon size={20} className={`mr-2 ${isItemActive ? 'text-text-light dark:text-text-dark' : ''}`} />
-                                    <span>{item.text}</span>
-                                </Link>
-                                {index < items.length - 1 && <DropdownDivider />}
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
-        </li>
-    );
-};
-
-const DropdownDivider = () => (
-    <hr className="border-gray-200 dark:border-gray-400 mx-3" />
-);
-
-const SidebarDivider = ({ isOpen }) => (
-    <li className={`my-2 ${isOpen ? 'mx-4' : 'mx-2'}`}>
-        <hr className="border-gray-300 dark:border-gray-400" />
-    </li>
-);
-
-const MobileDivider = () => (
-    <li className="h-8 w-px bg-gray-300 dark:bg-gray-700" />
-);
 
 export default Sidebar;

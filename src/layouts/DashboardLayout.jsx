@@ -1,18 +1,29 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
+import { Link, useNavigate } from 'react-router-dom';
+import Sidebar from '@/components/Sidebar';
 import { MdNotifications, MdLightMode, MdDarkMode, MdPerson } from 'react-icons/md';
-import { useTheme } from '../context/ThemeProvider';
+import { useTheme } from '@/context/ThemeProvider';
 
 const DashboardLayout = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [unreadMessages] = useState(3);
     const { theme, toggleTheme } = useTheme();
+    const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const toggleProfileDropdown = () => {
+        setIsProfileDropdownOpen((prev) => !prev);
+    };
+
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/login');
     };
 
     return (
@@ -38,9 +49,24 @@ const DashboardLayout = ({ children }) => {
                             <button onClick={toggleTheme} className="text-text-light dark:text-text-dark">
                                 {theme === 'dark' ? <MdLightMode size={24} /> : <MdDarkMode size={24} />}
                             </button>
-                            <Link to="/profile" className="text-text-light dark:text-text-dark">
-                                <MdPerson size={24} />
-                            </Link>
+                            <div className="relative">
+                                <button onClick={toggleProfileDropdown} className="text-text-light dark:text-text-dark">
+                                    <MdPerson size={24} />
+                                </button>
+                                {isProfileDropdownOpen && (
+                                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-2">
+                                        <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                            Profilni tahrirlash
+                                        </Link>
+                                        <button 
+                                            onClick={handleLogout} 
+                                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                        >
+                                            Profildan chiqish
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </header>

@@ -42,9 +42,8 @@ const TeacherGrading = () => {
     const uniqueGroups = [...new Set(students.map(student => student.group))];
 
     return (
-        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg" data-aos="fade-up">
+        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg max-w-2xl" data-aos="fade-up">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-primary-light dark:text-primary-dark">O&apos;quvchilarni baholash</h2>
-            
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6">
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-0">
                     <div className="relative">

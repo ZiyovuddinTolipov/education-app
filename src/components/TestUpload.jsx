@@ -15,7 +15,7 @@ const TestUpload = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-lg">
+        <div className="max-w-2xl bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-lg">
             <h2 className="text-xl font-semibold mb-4 flex items-center text-primary-light dark:text-primary-dark">
                 <MdCloudUpload className="mr-2" />
                 Test yuklash

@@ -45,3 +45,50 @@
     background-color: #1f2937;
     color: #e5e7eb;
 }
+.ql-toolbar.ql-snow {
+    background: var(--tw-bg-opacity) var(--tw-bg-surface-light);
+}
+
+.ql-toolbar.ql-snow .ql-picker {
+    color: var(--tw-text-opacity) var(--tw-text-light);
+}
+
+.ql-toolbar.ql-snow .ql-stroke {
+    stroke: var(--tw-text-opacity) var(--tw-text-light);
+}
+
+.ql-toolbar.ql-snow .ql-fill {
+    fill: var(--tw-text-opacity) var(--tw-text-light);
+}
+
+.ql-toolbar.ql-snow .ql-picker-options {
+    background: var(--tw-bg-opacity) var(--tw-bg-surface-light);
+}
+
+.ql-toolbar.ql-snow .ql-picker-item {
+    color: var(--tw-text-opacity) var(--tw-text-light);
+}
+
+.dark .ql-toolbar.ql-snow {
+    background: var(--tw-bg-opacity) var(--tw-bg-surface-dark);
+}
+
+.dark .ql-toolbar.ql-snow .ql-picker {
+    color: var(--tw-text-opacity) var(--tw-text-dark);
+}
+
+.dark .ql-toolbar.ql-snow .ql-stroke {
+    stroke: var(--tw-text-opacity) var(--tw-text-dark);
+}
+
+.dark .ql-toolbar.ql-snow .ql-fill {
+    fill: var(--tw-text-opacity) var(--tw-text-dark);
+}
+
+.dark .ql-toolbar.ql-snow .ql-picker-options {
+    background: var(--tw-bg-opacity) var(--tw-bg-surface-dark);
+}
+
+.dark .ql-toolbar.ql-snow .ql-picker-item {
+    color: var(--tw-text-opacity) var(--tw-text-dark);
+}

@@ -1,33 +1,80 @@
 import { useRoutes, Navigate } from 'react-router-dom';
 import Dashboard from '@/pages/Dashboard';
 import TeacherDashboard from '@/pages/TeacherDashboard';
+import AdminDashboard from '@/pages/AdminDashboard';
+import StudentDashboard from '@/pages/StudentDashboard';
+import Files from '@/pages/Files'; // Assuming you have a Files component
+import Login from '@/pages/Login';
+import Profile from '@/pages/Profile'; // Assuming you have a Profile component
+import ProtectedRoute from '@/routes/ProtectedRoute';
 import TeacherGrading from '@/components/TeacherGrading';
 import LabAssignment from '@/components/LabAssignment';
 import TestUpload from '@/components/TestUpload';
 import TopicCreation from '@/components/TopicCreation';
 import Messages from '@/pages/Messages';
-import Profile from '@/pages/Profile';  // Add this import
-import Files from '@/pages/Files';
+
 
 export default function AppRoutes() {
     const routes = useRoutes([
-        { path: '/', element: <Navigate to="/dashboard" replace /> },
-        { path: '/dashboard', element: <Dashboard /> },
+        { path: '/', element: <Navigate to="/login" replace /> },
+        { path: '/login', element: <Login /> },
         { path: '/messages', element: <Messages /> },
-        { path: '/profile', element: <Profile /> },  // Add this route
-        { path: '/files', element: <Files /> },  // Add this route
-        { 
-            path: '/teacher', 
-            element: <TeacherDashboard />,
+        {
+            path: '/dashboard',
+            element: (
+                <ProtectedRoute roles={['admin', 'teacher', 'student']}>
+                    <Dashboard />
+                </ProtectedRoute>
+            ),
+        },
+        {
+            path: '/admin',
+            element: (
+                <ProtectedRoute roles={['admin']}>
+                    <AdminDashboard />
+                </ProtectedRoute>
+            ),
+        },
+        {
+            path: '/teacher/*',
             children: [
                 { path: '', element: <Navigate to="grading" replace /> },
                 { path: 'grading', element: <TeacherGrading /> },
                 { path: 'lab', element: <LabAssignment /> },
                 { path: 'test', element: <TestUpload /> },
                 { path: 'topic', element: <TopicCreation /> },
-            ]
+            ],
+            element: (
+                <ProtectedRoute roles={['teacher']}>
+                    <TeacherDashboard />
+                </ProtectedRoute>
+            ),
         },
-        { path: '*', element: <Navigate to="/dashboard" replace /> }
+        {
+            path: '/student',
+            element: (
+                <ProtectedRoute roles={['student']}>
+                    <StudentDashboard />
+                </ProtectedRoute>
+            ),
+        },
+        {
+            path: '/files',
+            element: (
+                <ProtectedRoute roles={['admin', 'teacher']}>
+                    <Files />
+                </ProtectedRoute>
+            ),
+        },
+        {
+            path: '/profile',
+            element: (
+                <ProtectedRoute roles={['admin', 'teacher', 'student']}>
+                    <Profile />
+                </ProtectedRoute>
+            ),
+        },
+        { path: '*', element: <Navigate to="/login" replace /> },
     ]);
 
     return routes;
