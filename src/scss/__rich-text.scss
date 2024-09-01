@@ -45,50 +45,61 @@
     background-color: #1f2937;
     color: #e5e7eb;
 }
+
 .ql-toolbar.ql-snow {
-    background: var(--tw-bg-opacity) var(--tw-bg-surface-light);
-}
+    background: var(--tw-bg-opacity) theme('colors.surface.light');
+    border-color: theme('colors.primary.light');
 
-.ql-toolbar.ql-snow .ql-picker {
-    color: var(--tw-text-opacity) var(--tw-text-light);
-}
+    .ql-picker {
+        color: theme('colors.text.light');
+    }
 
-.ql-toolbar.ql-snow .ql-stroke {
-    stroke: var(--tw-text-opacity) var(--tw-text-light);
-}
+    .ql-stroke {
+        stroke: theme('colors.text.light');
+    }
 
-.ql-toolbar.ql-snow .ql-fill {
-    fill: var(--tw-text-opacity) var(--tw-text-light);
-}
+    .ql-fill {
+        fill: theme('colors.text.light');
+    }
 
-.ql-toolbar.ql-snow .ql-picker-options {
-    background: var(--tw-bg-opacity) var(--tw-bg-surface-light);
-}
+    .ql-picker-options {
+        background: theme('colors.surface.light');
+        border-color: theme('colors.primary.light');
+    }
 
-.ql-toolbar.ql-snow .ql-picker-item {
-    color: var(--tw-text-opacity) var(--tw-text-light);
+    .ql-picker-item {
+        color: theme('colors.text.light');
+    }
 }
 
 .dark .ql-toolbar.ql-snow {
-    background: var(--tw-bg-opacity) var(--tw-bg-surface-dark);
+    background: var(--tw-bg-opacity) theme('colors.surface.dark');
+    border-color: theme('colors.primary.dark');
+
+    .ql-picker, .ql-picker-item {
+        color: theme('colors.text.dark');
+    }
+
+    .ql-stroke {
+        stroke: theme('colors.text.dark');
+    }
+
+    .ql-fill {
+        fill: theme('colors.text.dark');
+    }
+
+    .ql-picker-options {
+        background: theme('colors.surface.dark');
+        border-color: theme('colors.primary.dark');
+    }
 }
 
-.dark .ql-toolbar.ql-snow .ql-picker {
-    color: var(--tw-text-opacity) var(--tw-text-dark);
+.ql-editor {
+    background-color: theme('colors.background.light');
+    color: theme('colors.text.light');
 }
 
-.dark .ql-toolbar.ql-snow .ql-stroke {
-    stroke: var(--tw-text-opacity) var(--tw-text-dark);
-}
-
-.dark .ql-toolbar.ql-snow .ql-fill {
-    fill: var(--tw-text-opacity) var(--tw-text-dark);
-}
-
-.dark .ql-toolbar.ql-snow .ql-picker-options {
-    background: var(--tw-bg-opacity) var(--tw-bg-surface-dark);
-}
-
-.dark .ql-toolbar.ql-snow .ql-picker-item {
-    color: var(--tw-text-opacity) var(--tw-text-dark);
+.dark .ql-editor {
+    background-color: theme('colors.background.dark');
+    color: theme('colors.text.dark');
 }
