@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { FaFilePdf, FaFileWord, FaFileExcel, FaFileArchive, FaFile, FaDownload, FaFilter, FaSearch } from 'react-icons/fa';
-import { filesData } from '../data/data';
-import DashboardLayout from '../layouts/DashboardLayout';
+import { filesData } from '@/data/data';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
 
 const getFileIcon = (category) => {
     switch (category) {

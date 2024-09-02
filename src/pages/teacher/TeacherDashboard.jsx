@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Outlet } from 'react-router-dom';
 import useTeacherAuth from '@/hooks/useTeacherAuth';
-import DashboardLayout from '@/layouts/DashboardLayout';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
 
 const TeacherDashboard = ({ children }) => {
     const isTeacher = useTeacherAuth();

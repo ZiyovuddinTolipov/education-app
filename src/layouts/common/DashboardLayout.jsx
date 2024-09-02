@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/common/Sidebar';
 import { MdNotifications, MdLightMode, MdDarkMode, MdPerson } from 'react-icons/md';
 import { useTheme } from '@/context/ThemeProvider';
 

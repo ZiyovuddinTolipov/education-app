@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import DashboardLayout from '@/layouts/DashboardLayout';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
 import { FaEnvelope, FaEnvelopeOpen, FaReply, FaTrash } from 'react-icons/fa';
 import AOS from 'aos';
-import MessageSkeleton from '@/components/MessageSkeleton';
+import MessageSkeleton from '@/components/common/MessageSkeleton';
 import { messagesData } from '@/data/data';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';

@@ -1,11 +1,11 @@
 import { useState, useCallback } from 'react';
 import { MdEdit } from 'react-icons/md';
-import DashboardLayout from '../layouts/DashboardLayout';
-import { profileData } from '../data/data';
-import ProfileImage from '../components/profile/ProfileImage';
-import ProfileForm from '../components/profile/ProfileForm';
-import ProfileInfo from '../components/profile/ProfileInfo';
-import ImageCropModal from '../components/profile/ImageCropModal';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
+import { profileData } from '@/data/data';
+import ProfileImage from '@/components/common/profile/ProfileImage';
+import ProfileForm from '@/components/common/profile/ProfileForm';
+import ProfileInfo from '@/components/common/profile/ProfileInfo';
+import ImageCropModal from '@/components/common/profile/ImageCropModal';
 
 const Profile = () => {
     const [isEditing, setIsEditing] = useState(false);

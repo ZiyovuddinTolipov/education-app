@@ -38,43 +38,43 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 </div>
                 <nav className="mt-8">
                     <ul>
-                        {menuItems.map((item) => (
-                            item.items ? (
-                                <li key={item.text}>
-                                    <button onClick={toggleTeacherMenu} className="flex items-center p-2 rounded hover:bg-surface-light dark:hover:bg-surface-dark">
-                                        <span className="ml-2">{item.text}</span>
-                                    </button>
-                                    {isTeacherMenuOpen && (
-                                        <ul className="ml-4">
-                                            {item.items.map((subItem) => (
-                                                <li key={subItem.to} className="mb-4">
-                                                    <Link
-                                                        to={subItem.to}
-                                                        className={`flex items-center p-2 rounded ${location.pathname === subItem.to
-                                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
-                                                            : 'hover:bg-surface-light dark:hover:bg-surface-dark'} ${isOpen ? '' : 'justify-center'}`}
-                                                    >
-                                                        <subItem.icon size={20} className={location.pathname === subItem.to ? 'text-text-light dark:text-text-dark' : 'text-text-light dark:text-text-dark'} />
-                                                        {isOpen && <span className="ml-2">{subItem.text}</span>}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                            ) : (
-                                <li key={item.to} className="mb-4">
+                        {menuItems.map((item, index) => (
+                            <li key={index} className="mb-2">
+                                {item.items ? (
+                                    <>
+                                        <button
+                                            onClick={toggleTeacherMenu}
+                                            className="flex items-center w-full text-left px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded"
+                                        >
+                                            <item.icon className="mr-2" />
+                                            <span>{item.text}</span>
+                                        </button>
+                                        {isTeacherMenuOpen && (
+                                            <ul className="pl-4">
+                                                {item.items.map((subItem, subIndex) => (
+                                                    <li key={subIndex} className="mb-2">
+                                                        <Link
+                                                            to={subItem.to}
+                                                            className={`flex items-center px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded ${location.pathname === subItem.to ? 'bg-primary-light dark:bg-primary-dark' : ''}`}
+                                                        >
+                                                            <subItem.icon className="mr-2" />
+                                                            <span>{subItem.text}</span>
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </>
+                                ) : (
                                     <Link
                                         to={item.to}
-                                        className={`flex items-center p-2 rounded ${location.pathname === item.to
-                                            ? 'bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark'
-                                            : 'hover:bg-surface-light dark:hover:bg-surface-dark'} ${isOpen ? '' : 'justify-center'}`}
+                                        className={`flex items-center px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded ${location.pathname === item.to ? 'bg-primary-light dark:bg-primary-dark' : ''}`}
                                     >
-                                        <item.icon size={20} className={location.pathname === item.to ? 'text-text-light dark:text-text-dark' : 'text-text-light dark:text-text-dark'} />
-                                        {isOpen && <span className="ml-2">{item.text}</span>}
+                                        <item.icon className="mr-2" />
+                                        <span>{item.text}</span>
                                     </Link>
-                                </li>
-                            )
+                                )}
+                            </li>
                         ))}
                     </ul>
                 </nav>

@@ -1,4 +1,4 @@
-import DashboardLayout from '@/layouts/DashboardLayout';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
 import EducationStatsComponent from '@/components/EducationStatsComponent';
 
 const Dashboard = () => {

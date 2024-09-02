@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { MdSave, MdAssignment } from 'react-icons/md';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -32,37 +31,37 @@ const LabAssignment = () => {
     ];
 
     return (
-        <div className="max-w-2xl bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-lg">
-            <h2 className="text-xl font-semibold mb-4 flex items-center text-primary-light dark:text-primary-dark">
-                <MdAssignment className="mr-2" />
-                Laboratoriya vazifasi qo&apos;shish
-            </h2>
-            <input 
-                type="text" 
-                value={labTitle} 
-                onChange={(e) => setLabTitle(e.target.value)} 
-                placeholder="Laboratoriya nomi"
-                className="w-full mb-2 p-2 border rounded bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
-            />
-            <ReactQuill 
-                value={labDescription} 
-                onChange={setLabDescription} 
-                placeholder="Laboratoriya tavsifi"
-                modules={modules}
-                formats={formats}
-                className="w-full mb-2 p-2 border rounded bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
-            />
-            <input 
-                type="file" 
-                onChange={(e) => setLabFile(e.target.files[0])} 
-                className="w-full mb-2 p-2 border rounded bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
-            />
-            <button 
+        <div className="p-4">
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Laboratoriya vazifasi sarlavhasi"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+                    value={labTitle}
+                    onChange={(e) => setLabTitle(e.target.value)}
+                />
+            </div>
+            <div className="mb-4">
+                <ReactQuill
+                    value={labDescription}
+                    onChange={setLabDescription}
+                    modules={modules}
+                    formats={formats}
+                    className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+                />
+            </div>
+            <div className="mb-4">
+                <input
+                    type="file"
+                    onChange={(e) => setLabFile(e.target.files[0])}
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+                />
+            </div>
+            <button
                 onClick={submitLab}
-                className="bg-primary-light dark:bg-primary-dark text-text-dark dark:text-text-light px-4 py-2 rounded hover:bg-accent-light dark:hover:bg-accent-dark transition-colors flex items-center"
+                className="px-4 py-2 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark rounded hover:bg-secondary-light dark:hover:bg-secondary-dark"
             >
-                <MdSave className="mr-2" />
-                Vazifani saqlash
+                Yuborish
             </button>
         </div>
     );
