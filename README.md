@@ -18,6 +18,7 @@ Ushbu loyiha ta'lim tizimini boshqarish va kuzatish uchun mo'ljallangan. Loyihad
 - **localStorage**: Foydalanuvchi ma'lumotlarini saqlash uchun.
 
 ## Fayl tuzilishi
+<pre>
 src/
 ├── components/
 │ ├── admin/
@@ -51,6 +52,7 @@ src/
 │ └── rich-text.scss
 └── routes/
 └── Routes.jsx
+</pre>
 
 ## Rollar va ularning vazifalari
 
