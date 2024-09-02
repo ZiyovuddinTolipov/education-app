@@ -73,7 +73,7 @@ const EducationStatsComponent = () => {
                 </div>
             </div>
 
-            <div className="h-[800px] overflow-y-auto"> {/* h-[600px] o'rniga h-[800px] */}
+            <div className="overflow-y-auto"> {/* h-[600px] o'rniga h-[800px] */}
                 <EducationCharts />
             </div>
 

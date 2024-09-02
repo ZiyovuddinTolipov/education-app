@@ -12,7 +12,7 @@ const EducationCharts = () => {
 
     if (!isAdmin) {
         return (
-            <div className="grid grid-cols-1 gap-4 mt-6">
+            <div className="grid grid-cols-1 gap-4 mt-6 h-96">
                 <AttendanceChart />
             </div>
         );

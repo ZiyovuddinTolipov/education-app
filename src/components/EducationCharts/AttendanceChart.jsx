@@ -2,24 +2,24 @@ import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { FaCalendarAlt } from 'react-icons/fa';
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
 } from 'chart.js';
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
 );
 
 const AttendanceChart = () => {
@@ -30,7 +30,7 @@ const AttendanceChart = () => {
     const lineChartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: 2,
+        aspectRatio: 0.5,
         plugins: {
             legend: {
                 position: 'bottom',
@@ -57,7 +57,7 @@ const AttendanceChart = () => {
     const getAttendanceData = () => {
         // Bu yerda backend'dan ma'lumotlarni olish kerak
         // Hozircha statik ma'lumotlarni qaytaramiz
-        switch(attendancePeriod) {
+        switch (attendancePeriod) {
             case 'daily':
                 return {
                     labels: ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma'],
@@ -94,43 +94,39 @@ const AttendanceChart = () => {
         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-4 text-center">Davomat</h3>
             <div className="mb-4 flex flex-wrap gap-2">
-                <button 
+                <button
                     onClick={() => setAttendancePeriod('daily')}
-                    className={`px-3 py-1 rounded-full text-sm ${
-                        attendancePeriod === 'daily' 
-                            ? 'bg-primary-light dark:bg-primary-dark text-white' 
+                    className={`px-3 py-1 rounded-full text-sm ${attendancePeriod === 'daily'
+                            ? 'bg-primary-light dark:bg-primary-dark text-white'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                    }`}
+                        }`}
                 >
                     Kunlik
                 </button>
-                <button 
+                <button
                     onClick={() => setAttendancePeriod('weekly')}
-                    className={`px-3 py-1 rounded-full text-sm ${
-                        attendancePeriod === 'weekly' 
-                            ? 'bg-primary-light dark:bg-primary-dark text-white' 
+                    className={`px-3 py-1 rounded-full text-sm ${attendancePeriod === 'weekly'
+                            ? 'bg-primary-light dark:bg-primary-dark text-white'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                    }`}
+                        }`}
                 >
                     Haftalik
                 </button>
-                <button 
+                <button
                     onClick={() => setAttendancePeriod('monthly')}
-                    className={`px-3 py-1 rounded-full text-sm ${
-                        attendancePeriod === 'monthly' 
-                            ? 'bg-primary-light dark:bg-primary-dark text-white' 
+                    className={`px-3 py-1 rounded-full text-sm ${attendancePeriod === 'monthly'
+                            ? 'bg-primary-light dark:bg-primary-dark text-white'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                    }`}
+                        }`}
                 >
                     Oylik
                 </button>
-                <button 
+                <button
                     onClick={() => setAttendancePeriod('custom')}
-                    className={`px-3 py-1 rounded-full text-sm ${
-                        attendancePeriod === 'custom' 
-                            ? 'bg-primary-light dark:bg-primary-dark text-white' 
+                    className={`px-3 py-1 rounded-full text-sm ${attendancePeriod === 'custom'
+                            ? 'bg-primary-light dark:bg-primary-dark text-white'
                             : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-                    }`}
+                        }`}
                 >
                     Boshqa davr
                 </button>
@@ -138,18 +134,18 @@ const AttendanceChart = () => {
             {attendancePeriod === 'custom' && (
                 <div className="mb-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                     <div className="relative flex-1">
-                        <input 
-                            type="date" 
-                            value={customStartDate} 
+                        <input
+                            type="date"
+                            value={customStartDate}
                             onChange={(e) => setCustomStartDate(e.target.value)}
                             className="w-full pl-10 pr-3 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
                         />
                         <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     </div>
                     <div className="relative flex-1">
-                        <input 
-                            type="date" 
-                            value={customEndDate} 
+                        <input
+                            type="date"
+                            value={customEndDate}
                             onChange={(e) => setCustomEndDate(e.target.value)}
                             className="w-full pl-10 pr-3 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
                         />
@@ -157,7 +153,7 @@ const AttendanceChart = () => {
                     </div>
                 </div>
             )}
-            <Line 
+            <Line
                 data={{
                     labels: attendanceData.labels,
                     datasets: [{
@@ -166,7 +162,7 @@ const AttendanceChart = () => {
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.1
                     }]
-                }} 
+                }}
                 options={lineChartOptions}
             />
         </div>

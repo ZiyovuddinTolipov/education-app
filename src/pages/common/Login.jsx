@@ -10,25 +10,30 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(username, password);
         try {
-            await login(username, password);
+            const isLoggedIn = await login(username, password);
+            if (!isLoggedIn) {
+                throw new Error("Noto'g'ri foydalanuvchi nomi yoki parol");
+            }
         } catch (error) {
             alert(error.message);
         }
     };
 
     useEffect(() => {
-        console.log(user);
         if (user) {
-            if (user.role === 'admin') {
-                navigate('/admin');
-            } else if (user.role === 'teacher') {
-                navigate('/teacher');
-            } else if (user.role === 'student') {
-                navigate('/student');
-            } else {
-                navigate('/dashboard');
+            switch(user.role) {
+                case 'admin':
+                    navigate('/admin');
+                    break;
+                case 'teacher':
+                    navigate('/teacher');
+                    break;
+                case 'student':
+                    navigate('/student');
+                    break;
+                default:
+                    navigate('/dashboard');
             }
         }
     }, [user, navigate]);

@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                             onClick={toggleTeacherMenu}
                                             className="flex items-center w-full text-left px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded"
                                         >
-                                            <item.icon className="mr-2" />
+                                            {item.icon && <item.icon className="mr-2" />}
                                             <span>{item.text}</span>
                                         </button>
                                         {isTeacherMenuOpen && (
@@ -57,7 +57,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                                             to={subItem.to}
                                                             className={`flex items-center px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded ${location.pathname === subItem.to ? 'bg-primary-light dark:bg-primary-dark' : ''}`}
                                                         >
-                                                            <subItem.icon className="mr-2" />
+                                                            {subItem.icon && <subItem.icon className="mr-2" />}
                                                             <span>{subItem.text}</span>
                                                         </Link>
                                                     </li>
@@ -70,7 +70,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                         to={item.to}
                                         className={`flex items-center px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded ${location.pathname === item.to ? 'bg-primary-light dark:bg-primary-dark' : ''}`}
                                     >
-                                        <item.icon className="mr-2" />
+                                        {item.icon && <item.icon className="mr-2" />}
                                         <span>{item.text}</span>
                                     </Link>
                                 )}
@@ -97,7 +97,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                                     to={subItem.to}
                                                     className={`flex flex-col items-center ${location.pathname === subItem.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
                                                 >
-                                                    <subItem.icon size={24} className={location.pathname === subItem.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />
+                                                    {subItem.icon && <subItem.icon size={24} className={location.pathname === subItem.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />}
                                                     <span className="text-xs">{subItem.text}</span>
                                                 </Link>
                                             </li>
@@ -111,7 +111,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                     to={item.to}
                                     className={`flex flex-col items-center ${location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
                                 >
-                                    <item.icon size={24} className={location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />
+                                    {item.icon && <item.icon size={24} className={location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />}
                                     <span className="text-xs">{item.text}</span>
                                 </Link>
                             </li>
