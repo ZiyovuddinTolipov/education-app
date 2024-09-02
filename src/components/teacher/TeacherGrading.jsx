@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MdSave } from 'react-icons/md';
 import { FaSearch, FaFilter } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const TeacherGrading = () => {
     const [students, setStudents] = useState([]);
@@ -19,11 +17,6 @@ const TeacherGrading = () => {
             { id: 4, name: 'Zarina Umarova', group: 'B2' },
             { id: 5, name: 'Sardor Rashidov', group: 'C3' },
         ]);
-
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
     }, []);
 
     const handleGradeChange = (studentId, grade) => {

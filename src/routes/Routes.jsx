@@ -7,10 +7,10 @@ import Files from '@/pages/Files'; // Assuming you have a Files component
 import Login from '@/pages/Login';
 import Profile from '@/pages/Profile'; // Assuming you have a Profile component
 import ProtectedRoute from '@/routes/ProtectedRoute';
-import TeacherGrading from '@/components/TeacherGrading';
-import LabAssignment from '@/components/LabAssignment';
-import TestUpload from '@/components/TestUpload';
-import TopicCreation from '@/components/TopicCreation';
+import TeacherGrading from '@/components/teacher/TeacherGrading';
+import LabAssignment from '@/components/teacher/LabAssignment';
+import TestUpload from '@/components/teacher/TestUpload';
+import TopicCreation from '@/components/teacher/TopicCreation';
 import Messages from '@/pages/Messages';
 
 

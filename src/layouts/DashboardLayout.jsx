@@ -27,7 +27,7 @@ const DashboardLayout = ({ children }) => {
     };
 
     return (
-        <div className="flex min-h-[100svh] h-auto bg-background-light dark:bg-background-dark">
+        <div className="flex min-h-[100svh] h-auto dark:bg-background-dark">
             <Sidebar 
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar} 
@@ -70,8 +70,8 @@ const DashboardLayout = ({ children }) => {
                         </div>
                     </div>
                 </header>
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark mt-16">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white dark:bg-background-dark mt-16">
+                    <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         {children}
                     </div>
                 </main>

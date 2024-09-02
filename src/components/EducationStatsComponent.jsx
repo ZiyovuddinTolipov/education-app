@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import { FaUserGraduate, FaBook, FaClock, FaSearch, FaFilter } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import EducationCharts from '@/components/EducationCharts';
+import EducationCharts from '@/components/EducationCharts/index';
 import { educationData } from '@/data/data';
 
 const EducationStatsComponent = () => {
