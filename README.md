@@ -96,3 +96,120 @@ src/
 - **localStorage**: Foydalanuvchi ma'lumotlarini saqlash uchun.
 
 Ushbu ma'lumotlar loyihangizning umumiy tuzilishi, unda ishlatilgan texnologiyalar va rollar vazifalari haqida to'liq tasavvur beradi.
+
+## Admin uchun funksionalliklar:
+
+1. Testlarni boshqarish:
+   - Testlarni o'chirish, qo'shish va tahrirlash
+   - Test turlarini yaratish (masalan, ko'p tanlovli, to'g'ri/noto'g'ri, qisqa javob)
+   - Testlarni mavzular va qiyinlik darajasi bo'yicha kategoriyalash
+
+2. Foydalanuvchi profillarini boshqarish:
+   - Yangi profillar yaratish (o'quvchi, o'qituvchi, admin)
+   - Mavjud profillarni tahrirlash va o'chirish
+   - Foydalanuvchi huquqlarini boshqarish
+   - Guruhlar va kurslarni yaratish, tahrirlash
+
+3. O'quvchilar statistikasini ko'rish va tahlil qilish:
+   - Davomat (kunlik, oylik, semestr, yillik)
+   - O'rtacha ball va individual baholar dinamikasi
+   - Jins, guruh, kurs, fakultet bo'yicha statistika
+   - Statistik hisobotlarni eksport qilish (PDF, Excel)
+
+4. Fayllar va resurslarni boshqarish:
+   - Turli formatdagi fayllarni (PDF, DOC, video) yuklash, tahrirlash, o'chirish
+   - Fayllarni kategoriyalash va teglar bilan belgilash
+   - Foydalanuvchi guruhlari uchun fayllardan foydalanish huquqlarini belgilash
+
+5. O'qituvchilar baholash tizimini boshqarish:
+   - So'rovnomalar yaratish, tahrirlash va o'chirish
+   - Baholash mezonlarini belgilash
+   - Natijalarni tahlil qilish va hisobotlar tayyorlash
+
+6. Tizim sozlamalarini boshqarish:
+   - Tizim tilini o'zgartirish
+   - Xavfsizlik sozlamalarini boshqarish (parol murakkabligi, seanslar davomiyligi)
+   - Tizim zaxira nusxasini yaratish va tiklash
+
+7. Moliyaviy operatsiyalarni boshqarish:
+   - To'lovlarni kuzatish va hisobotlar tayyorlash
+   - Stipendiyalarni belgilash va boshqarish
+
+## O'qituvchi uchun funksionalliklar:
+
+1. O'quvchilarni baholash:
+   - Turli xil baholash mezonlarini belgilash (test, laboratoriya ishi, loyiha)
+   - Baholarni kiritish va tahrirlash
+   - Individual va guruh bo'yicha baholash natijalari tahlili
+
+2. Laboratoriya ishlarini boshqarish:
+   - Yangi laboratoriya ishlarini yaratish va mavjudlarini tahrirlash
+   - Topshiriqlarni belgilash va muddatlarni o'rnatish
+   - Natijalarni tekshirish va baholash
+   - Avtomatlashtirilgan tekshirish tizimini joriy etish (dasturlash topshiriqlari uchun)
+
+3. Testlarni yaratish va boshqarish:
+   - Turli formatdagi testlar yaratish
+   - Test savollarini kategoriyalash va qiyinlik darajasini belgilash
+   - Testlarni vaqt chegarasi bilan sozlash
+   - Test natijalarini avtomatik hisoblash va tahlil qilish
+
+4. O'quv materiallarini boshqarish:
+   - Mavzular bo'yicha materiallarni yuklash (PDF, video, audio)
+   - Mavzulararo bog'liqliklarni o'rnatish
+   - Materiallarni ketma-ketlikda ochish tizimini sozlash
+   - Foydalanuvchi faolligiga qarab materiallarni tavsiya qilish
+
+5. O'quvchilar bilan aloqa:
+   - Xabarlar almashish tizimi
+   - Guruhiy muhokamalar yaratish
+   - Online konsultatsiyalar o'tkazish
+
+6. Hisobotlar va tahlillar:
+   - O'quvchilar faolligi va yutuqlari bo'yicha hisobotlar
+   - Mavzular bo'yicha o'zlashtirish darajasi tahlili
+   - O'z faoliyati samaradorligi tahlili
+
+7. Dars jadvali va topshiriqlarni rejalashtirish:
+   - Dars jadvalini yaratish va boshqarish
+   - Topshiriqlar va loyihalar uchun muddatlarni belgilash
+
+## O'quvchi uchun funksionalliklar:
+
+1. O'qituvchini baholash:
+   - Anonim so'rovnomalarda qatnashish
+   - O'qituvchi faoliyati bo'yicha fikr-mulohaza bildirish
+
+2. O'qituvchi va adminstratsiya bilan aloqa:
+   - Xabarlar yuborish va qabul qilish
+   - Guruhiy muhokamalarda ishtirok etish
+   - Online konsultatsiyalarga yozilish
+
+3. O'quv jarayonida ishtirok etish:
+   - Laboratoriya ishlarini topshirish
+   - Testlarni topshirish
+   - Loyiha va topshiriqlarni yuklash
+
+4. O'quv materiallaridan foydalanish:
+   - Mavzular bo'yicha materiallarga kirish
+   - Video va audio materiallarni ko'rish/tinglash
+   - Qo'shimcha resurslardan foydalanish
+
+5. Shaxsiy yutuqlarni kuzatish:
+   - Baholar va reytingni ko'rish
+   - Davomat statistikasini kuzatish
+   - O'zlashtirish darajasi tahlilini ko'rish
+
+6. Shaxsiy profilni boshqarish:
+   - Shaxsiy ma'lumotlarni yangilash
+   - Parolni o'zgartirish
+   - Bildirishnomalarni sozlash
+
+7. Hamkorlikda ishlash:
+   - Guruhiy loyihalarda ishtirok etish
+   - Hamkurslar bilan materiallar almashish
+   - Peer-review jarayonida qatnashish
+
+8. Mobil qurilmalar uchun versiya:
+   - Mobil ilovadan foydalanish
+   - Offline rejimda ishlash imkoniyati
