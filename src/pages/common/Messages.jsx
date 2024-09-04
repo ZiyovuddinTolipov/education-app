@@ -56,10 +56,10 @@ const Messages = () => {
 
     return (
         <DashboardLayout>
-            <div className="flex flex-col md:flex-row min-h-[calc(100vh-4rem)] h-auto pb-10 bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                <div className={`w-full md:w-1/3 bg-surface-light dark:bg-surface-dark border-b md:border-r border-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
-                    <h2 className="text-xl font-bold p-4 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark" data-aos="fade-right">Xabarlar</h2>
-                    <div className="overflow-y-auto flex-grow">
+            <div className="flex flex-col md:flex-row max-h-[80svh] h-auto  bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                <div className={`w-full md:w-1/3 bg-surface-light dark:bg-surface-dark border-b md:border-r border-r-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
+                    <h2 className="text-xl font-bold p-4 bg-primary-light dark:bg-primary-dark text-white dark:text-text-dark" data-aos="fade-right">Xabarlar</h2>
+                    <div className="overflow-y-auto flex-grow max-h-[100%]">
                         {loading ? (
                             Array(5).fill().map((_, index) => <MessageSkeleton key={index} />)
                         ) : (
@@ -74,11 +74,11 @@ const Messages = () => {
                                 >
                                     <div className="flex items-center">
                                         {message.unread ?
-                                            <FaEnvelope className="text-primary-400 dark:text-primary-300 mr-2" /> :
-                                            <FaEnvelopeOpen className="text-surface-500 dark:text-surface-400 mr-2" />
+                                            <FaEnvelope className="text-white dark:text-primary-300 mr-2" /> :
+                                            <FaEnvelopeOpen className="text-wh dark:text-surface-400 mr-2" />
                                         }
                                         <div>
-                                            <div className={`font-semibold ${message.unread ? 'text-surface-700 dark:text-surface-100' : 'text-surface-600 dark:text-surface-300'}`}>
+                                            <div className={`font-semibold ${message.unread ? 'text-primary-dark dark:text-white' : 'text-surface-600 dark:text-surface-300'}`}>
                                                 {message.sender}
                                             </div>
                                             <div className="text-sm text-surface-500 dark:text-surface-400">{message.subject}</div>
@@ -137,7 +137,7 @@ const Messages = () => {
                             </div>
                         </>
                     ) : (
-                        <p className="text-center text-gray-500 dark:text-gray-400 mt-10" data-aos="fade-up">Xabar tanlang</p>
+                        <p className="text-center text-gray-500 dark:text-gray-400" data-aos="fade-up">Xabar tanlang</p>
                     )}
                 </div>
             </div>

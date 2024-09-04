@@ -5,6 +5,7 @@ import TeacherRoutes from './TeacherRoutes';
 import StudentRoutes from './StudentRoutes';
 import ProtectedRoute from './ProtectedRoute';
 import { useAuth } from '@/context/AuthProvider';
+import Messages from '@/pages/common/Messages';
 
 const AppRoutes = () => {
     const { user } = useAuth();
@@ -12,6 +13,7 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/messages" element={<Messages />} />
             <Route 
                 path="/admin/*" 
                 element={
