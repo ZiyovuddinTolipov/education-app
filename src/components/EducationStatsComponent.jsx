@@ -25,8 +25,8 @@ const EducationStatsComponent = () => {
     const uniqueClasses = [...new Set(educationData.map(data => data.class))];
 
     return (
-        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg" >
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-primary-light dark:text-primary-dark">Ta&apos;lim statistikasi</h2>
+        <div className="p-4 sm:p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold mb-6 text-primary-light dark:text-primary-dark">Ta&apos;lim statistikasi</h2>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6">
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-0">
@@ -73,7 +73,7 @@ const EducationStatsComponent = () => {
                 </div>
             </div>
 
-            <div className="overflow-y-auto"> {/* h-[600px] o'rniga h-[800px] */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <EducationCharts />
             </div>
 

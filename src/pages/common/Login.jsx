@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthProvider';
 
 const Login = () => {
@@ -7,6 +7,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const { login, user } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,21 +23,10 @@ const Login = () => {
 
     useEffect(() => {
         if (user) {
-            switch(user.role) {
-                case 'admin':
-                    navigate('/admin');
-                    break;
-                case 'teacher':
-                    navigate('/teacher');
-                    break;
-                case 'student':
-                    navigate('/student');
-                    break;
-                default:
-                    navigate('/dashboard');
-            }
+            const from = location.state?.from?.pathname || `/${user.role}`;
+            navigate(from, { replace: true });
         }
-    }, [user, navigate]);
+    }, [user, navigate, location]);
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-background-light dark:bg-background-dark p-4">

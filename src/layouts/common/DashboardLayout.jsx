@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '@/components/common/Sidebar';
-import { MdNotifications, MdLightMode, MdDarkMode, MdPerson } from 'react-icons/md';
+import { MdNotifications, MdLightMode, MdDarkMode, MdPerson, MdSearch } from 'react-icons/md';
 import { useTheme } from '@/context/ThemeProvider';
 
 const DashboardLayout = ({ children }) => {
@@ -27,16 +27,26 @@ const DashboardLayout = ({ children }) => {
     };
 
     return (
-        <div className="flex min-h-[100svh] h-auto dark:bg-background-dark">
+        <div className="flex min-h-[100svh] h-auto bg-[#F7F7FA] dark:bg-[#1E1E2D]">
             <Sidebar 
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar} 
                 isDarkMode={theme === 'dark'}
             />
             <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
-                <header className="bg-surface-light dark:bg-surface-dark shadow-md fixed top-0 left-0 right-0 z-50">
+                <header className="bg-white dark:bg-[#1E1E2D] shadow-sm fixed top-0 left-0 right-0 z-50">
                     <div className={`max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
-                        <h1 className="text-2xl font-semibold text-text-light dark:text-text-dark">Dashboard</h1>
+                        <div className="flex items-center">
+                            <h1 className="text-2xl font-semibold text-[#6C5DD3] dark:text-white mr-8">MatDash</h1>
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="pl-10 pr-4 py-2 rounded-full bg-[#F7F7FA] dark:bg-[#2B2B40] text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6C5DD3]"
+                                />
+                                <MdSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                            </div>
+                        </div>
                         <div className="flex items-center space-x-4">
                             <Link to="/messages" className="relative">
                                 <MdNotifications size={24} className="text-text-light dark:text-text-dark" />
@@ -70,7 +80,7 @@ const DashboardLayout = ({ children }) => {
                         </div>
                     </div>
                 </header>
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white dark:bg-background-dark mt-16">
+                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#F7F7FA] dark:bg-[#1E1E2D] mt-16 p-6">
                     <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         {children}
                     </div>

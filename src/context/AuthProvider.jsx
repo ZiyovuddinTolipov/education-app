@@ -11,18 +11,21 @@ export const AuthProvider = ({ children }) => {
         if (storedRole) {
             setUser({ role: storedRole });
         }
-    }, []);
+    }, []); // Bo'sh dependency array
 
     const login = async (username, password) => {
+        console.log(username,password)
         let role = null;
         if (username === import.meta.env.VITE_ADMIN_USERNAME && password === import.meta.env.VITE_ADMIN_PASSWORD) {
+            console.log("admin")
             role = 'admin';
         } else if (username === import.meta.env.VITE_TEACHER_USERNAME && password === import.meta.env.VITE_TEACHER_PASSWORD) {
+            console.log("teacher")
             role = 'teacher';
         } else if (username === import.meta.env.VITE_STUDENT_USERNAME && password === import.meta.env.VITE_STUDENT_PASSWORD) {
             role = 'student';
         }
-
+        console.log(username,password)
         if (role) {
             setUser({ role });
             localStorage.setItem('userRole', role);

@@ -9,29 +9,43 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: '#006400', // Dark green
-          dark: '#008000', // Slightly lighter green for dark mode
+          light: '#6C5DD3', // Asosiy binafsha rang
+          dark: '#8B7DFF', // Dark mode uchun ochroq binafsha
         },
         secondary: {
-          light: '#00FF00', // Electric green
-          dark: '#32CD32', // Lime green for dark mode
+          light: '#A0D7E7', // Och ko'k
+          dark: '#64B5F6', // Dark mode uchun to'qroq ko'k
         },
         background: {
-          light: '#FFFFFF', // White
-          dark: '#000000', // Black
+          light: '#F7F7FA', // Juda och kulrang
+          dark: '#1E1E2D', // To'q ko'k-kulrang
         },
         text: {
-          light: '#000000', // Black
-          dark: '#FFFFFF', // White
+          light: '#4B5563', // To'q kulrang
+          dark: '#E0E0E0', // Och kulrang
         },
         surface: {
-          light: '#F0FFF0', // Honeydew (very light green)
-          dark: '#1A1A1A', // Very dark gray (almost black)
+          light: '#FFFFFF', // Oq
+          dark: '#2B2B40', // To'q ko'k-kulrang
         },
         accent: {
-          light: '#90EE90', // Light green
-          dark: '#228B22', // Forest green
+          light: '#FF8A65', // Och qizg'ish
+          dark: '#FF7043', // Dark mode uchun to'qroq qizg'ish
         },
+        chart: {
+          background: {
+            light: '#FFFFFF',
+            dark: '#2B2B40'
+          },
+          text: {
+            light: '#333333',
+            dark: '#E0E0E0'
+          },
+          grid: {
+            light: '#E0E0E0',
+            dark: '#3F3F5F'
+          }
+        }
       },
     },
   },

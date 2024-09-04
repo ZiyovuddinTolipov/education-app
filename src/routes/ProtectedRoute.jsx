@@ -1,24 +1,20 @@
-import PropTypes from 'prop-types';
-import { Navigate } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthProvider';
 
-const ProtectedRoute = ({ children, roles = ['admin', 'teacher', 'student'] }) => {
+const ProtectedRoute = ({ children, roles }) => {
     const { user } = useAuth();
+    const location = useLocation();
 
     if (!user) {
-        return <Navigate to="/login" replace />;
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
-    if (roles?.length && !roles.includes(user?.role)) {
-        return <Navigate to="/dashboard" replace />;
+    if (roles && !roles.includes(user.role)) {
+        return <Navigate to="/unauthorized" replace />;
     }
 
     return children;
-};
-
-ProtectedRoute.propTypes = {
-    children: PropTypes.node.isRequired,
-    roles: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default ProtectedRoute;
