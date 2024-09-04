@@ -466,3 +466,20 @@ export const educationStats = {
         studentCount: [150, 130, 120],
     },
 };
+export const usersData = [
+    { id: 1, name: 'John Doe', email: 'john@example.com', role: 'student', lastActive: '2023-05-15T10:30:00', isOnline: true },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'teacher', lastActive: '2023-05-14T15:45:00', isOnline: false },
+    { id: 3, name: 'Admin User', email: 'admin@example.com', role: 'admin', lastActive: '2023-05-15T09:00:00', isOnline: true },
+    { id: 4, name: 'Alice Johnson', email: 'alice@example.com', role: 'student', lastActive: '2023-05-15T11:20:00', isOnline: true },
+    { id: 5, name: 'Bob Williams', email: 'bob@example.com', role: 'teacher', lastActive: '2023-05-14T16:30:00', isOnline: false },
+    { id: 6, name: 'Charlie Brown', email: 'charlie@example.com', role: 'student', lastActive: '2023-05-15T10:45:00', isOnline: true },
+    { id: 7, name: 'Diana Clark', email: 'diana@example.com', role: 'teacher', lastActive: '2023-05-15T08:15:00', isOnline: true },
+    { id: 8, name: 'Edward Davis', email: 'edward@example.com', role: 'student', lastActive: '2023-05-14T14:00:00', isOnline: false },
+    { id: 9, name: 'Fiona Evans', email: 'fiona@example.com', role: 'admin', lastActive: '2023-05-15T09:30:00', isOnline: true },
+    { id: 10, name: 'George Foster', email: 'george@example.com', role: 'student', lastActive: '2023-05-15T12:00:00', isOnline: true },
+    { id: 11, name: 'Hannah Hill', email: 'hannah@example.com', role: 'teacher', lastActive: '2023-05-14T17:00:00', isOnline: false },
+    { id: 12, name: 'Ian Irving', email: 'ian@example.com', role: 'student', lastActive: '2023-05-15T10:15:00', isOnline: true },
+    { id: 13, name: 'Julia Jackson', email: 'julia@example.com', role: 'teacher', lastActive: '2023-05-15T08:45:00', isOnline: true },
+    { id: 14, name: 'Kevin King', email: 'kevin@example.com', role: 'student', lastActive: '2023-05-14T15:30:00', isOnline: false },
+    { id: 15, name: 'Laura Lee', email: 'laura@example.com', role: 'admin', lastActive: '2023-05-15T09:15:00', isOnline: true },
+];
