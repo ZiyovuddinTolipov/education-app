@@ -38,7 +38,6 @@ const Profile = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsEditing(false);
-        // Here you would typically send the updated user data to your backend
     };
 
     const onImageLoaded = useCallback((img) => {
