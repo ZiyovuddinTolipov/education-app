@@ -31,15 +31,15 @@ const UserManagement = () => {
         applyFilters(updatedUsers);
     };
 
-    const applyFilters = (userList = users) => {
+    const applyFilters = (userList, role, term) => {
         let result = userList;
-        if (filterRole) {
-            result = result.filter(user => user.role === filterRole);
+        if (role) {
+            result = result.filter(user => user.role === role);
         }
-        if (searchTerm) {
+        if (term) {
             result = result.filter(user => 
-                user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                user.email.toLowerCase().includes(searchTerm.toLowerCase())
+                user.name.toLowerCase().includes(term.toLowerCase()) ||
+                user.email.toLowerCase().includes(term.toLowerCase())
             );
         }
         setFilteredUsers(result);
@@ -47,15 +47,12 @@ const UserManagement = () => {
 
     const handleRoleFilter = (role) => {
         setFilterRole(role);
-        applyFilters(users.filter(user => role === '' || user.role === role));
+        applyFilters(users, role, searchTerm);
     };
 
     const handleSearch = (term) => {
         setSearchTerm(term);
-        applyFilters(users.filter(user => 
-            user.name.toLowerCase().includes(term.toLowerCase()) ||
-            user.email.toLowerCase().includes(term.toLowerCase())
-        ));
+        applyFilters(users, filterRole, term);
     };
 
     const getRoleIcon = (role) => {
