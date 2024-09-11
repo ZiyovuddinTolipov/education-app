@@ -483,3 +483,107 @@ export const usersData = [
     { id: 14, name: 'Kevin King', email: 'kevin@example.com', role: 'student', lastActive: '2023-05-14T15:30:00', isOnline: false },
     { id: 15, name: 'Laura Lee', email: 'laura@example.com', role: 'admin', lastActive: '2023-05-15T09:15:00', isOnline: true },
 ];
+export const teacherStudents = {
+    "9-A": [
+        {
+            id: 1,
+            student: "Olimjon Murodov",
+            attendance: "80%",
+            grade: "C+",
+            subject: "Kimyo",
+            lastAttended: "2023-05-10",
+        },
+        {
+            id: 2,
+            student: "Nilufar Ahmedova",
+            attendance: "91%",
+            grade: "A-",
+            subject: "Kimyo",
+            lastAttended: "2023-05-07",
+        },
+    ],
+    "9-B": [
+        {
+            id: 3,
+            student: "Botir Qodirov",
+            attendance: "88%",
+            grade: "B",
+            subject: "Kimyo",
+            lastAttended: "2023-05-13",
+        },
+    ],
+    "10-A": [
+        {
+            id: 4,
+            student: "Aziz Yoldoshev",
+            attendance: "95%",
+            grade: "A",
+            subject: "Matematika",
+            lastAttended: "2023-05-15",
+        },
+        {
+            id: 5,
+            student: "Sardorbek Tursunov",
+            attendance: "90%",
+            grade: "A-",
+            subject: "Matematika",
+            lastAttended: "2023-05-12",
+        },
+        {
+            id: 6,
+            student: "Shahnoza Qodirova",
+            attendance: "93%",
+            grade: "A",
+            subject: "Matematika",
+            lastAttended: "2023-05-09",
+        },
+        {
+            id: 7,
+            student: "Javlonbek Sultonov",
+            attendance: "89%",
+            grade: "B+",
+            subject: "Matematika",
+            lastAttended: "2023-05-06",
+        },
+    ],
+    "10-B": [
+        {
+            id: 8,
+            student: "Farhodbek Ismoilov",
+            attendance: "87%",
+            grade: "B-",
+            subject: "Matematika",
+            lastAttended: "2023-05-08",
+        },
+    ],
+    "11-A": [
+        {
+            id: 9,
+            student: "Malika Karimova",
+            attendance: "92%",
+            grade: "B+",
+            subject: "Fizika",
+            lastAttended: "2023-05-14",
+        },
+    ],
+    "11-B": [
+        {
+            id: 10,
+            student: "Durdona Rahimova",
+            attendance: "85%",
+            grade: "B",
+            subject: "Fizika",
+            lastAttended: "2023-05-11",
+        },
+    ],
+    "11-C": [
+        {
+            id: 11,
+            student: "Azizbek Qodirov",
+            attendance: "90%",
+            grade: "A",
+            subject: "Fizika",
+            lastAttended: "2023-05-05",
+        },
+    ],
+};
