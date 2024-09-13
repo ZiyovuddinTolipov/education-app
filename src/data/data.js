@@ -587,3 +587,48 @@ export const teacherStudents = {
         },
     ],
 };
+export const lessonsData = [
+    {
+        id: 1,
+        title: "Matematika darsi",
+        date: "2024-09-11", // Dushanba
+        description: "Algebra va geometriya asoslari",
+    },
+    {
+        id: 2,
+        title: "Fizika darsi",
+        date: "2024-09-12", // Seshanba
+        description: "Klassik mexanika",
+    },
+    {
+        id: 3,
+        title: "Kimyo darsi",
+        date: "2024-09-13", // Chorshanba
+        description: "Organik kimyo",
+    },
+    {
+        id: 4,
+        title: "Biologiya darsi",
+        date: "2024-09-14", // Payshanba
+        description: "O'simliklar va hayvonlar biologiyasi",
+    },
+    {
+        id: 5,
+        title: "Tarix darsi",
+        date: "2024-09-15", // Juma
+        description: "O'zbekiston tarixi",
+    },
+    {
+        id: 6,
+        title: "Informatika darsi",
+        date: "2024-09-16", // Shanba
+        description: "Dasturlash asoslari",
+    },
+    // Dars yo'q bo'lgan kunlar uchun misollar
+    {
+        id: 7,
+        title: "Dars yo'q",
+        date: "2024-09-17", // Yakshanba
+        description: "Dars yo'q",
+    },
+];
