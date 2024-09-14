@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useLocation, Link } from 'react-router-dom';
-import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdMenu, MdClose, MdPeople, MdSettings, MdInsertChart } from 'react-icons/md';
+import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdMenu, MdClose, MdPeople, MdSettings, MdInsertChart, MdVideoLibrary } from 'react-icons/md';
 import { useState } from 'react';
 import { IoDocuments } from "react-icons/io5";
 import { useAuth } from '@/context/AuthProvider';
@@ -34,6 +34,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     const studentMenuItems = [
         { to: "/student", icon: MdDashboard, text: "Dashboard" },
+        { to: "/student/video-lessons", icon: MdVideoLibrary, text: "Video darslar" }, // Video darslar qo'shildi
         // Talaba uchun boshqa menyu elementlarini qo'shing
     ];
 

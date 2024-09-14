@@ -632,3 +632,26 @@ export const lessonsData = [
         description: "Dars yo'q",
     },
 ];
+export const videoLessonsData = [
+    {
+        id: 1,
+        title: "Matematika darsi 1",
+        url: "/student/video-lessons/1",
+        description: "Algebra va geometriya asoslari",
+        quizAvailable: true, // Test mavjudligi
+    },
+    {
+        id: 2,
+        title: "Fizika darsi 1",
+        url: "/student/video-lessons/2",
+        description: "Klassik mexanika",
+        quizAvailable: false, // Test mavjud emas
+    },
+    {
+        id: 3,
+        title: "Kimyo darsi 1",
+        url: "/student/video-lessons/3",
+        description: "Organik kimyo",
+        quizAvailable: true, // Test mavjud
+    },
+];
