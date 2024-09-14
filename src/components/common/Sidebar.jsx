@@ -34,8 +34,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     const studentMenuItems = [
         { to: "/student", icon: MdDashboard, text: "Dashboard" },
-        { to: "/student/video-lessons", icon: MdVideoLibrary, text: "Video darslar" }, // Video darslar qo'shildi
-        // Talaba uchun boshqa menyu elementlarini qo'shing
+        { to: "/student/video-lessons", icon: MdVideoLibrary, text: "Video darslar" },
+        { to: "/student/courses", icon: MdSchool, text: "Kurslar" }, // Kurslar qo'shildi
     ];
 
     const getMenuItems = () => {

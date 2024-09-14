@@ -655,3 +655,24 @@ export const videoLessonsData = [
         quizAvailable: true, // Test mavjud
     },
 ];
+export const coursesData = [
+    {
+        id: 1,
+        title: "No Code",
+        description: "Bepul no-code kursi. Kod yozmasdan dasturchi bo'lish.",
+        topics: [
+            { id: 1, title: "Dars 1: Kirish", duration: "10 soat 36 daqiqa" },
+            { id: 2, title: "Dars 2: Tildada bepul ro'yxatdan o'tish yo'li", duration: "5 soat" },
+            { id: 3, title: "Dars 3: Sayt tayyorlash shablonlari", duration: "8 soat" },
+        ],
+    },
+    {
+        id: 2,
+        title: "Web Development",
+        description: "Web dasturlash asoslari.",
+        topics: [
+            { id: 1, title: "HTML va CSS", duration: "6 soat" },
+            { id: 2, title: "JavaScript asoslari", duration: "8 soat" },
+        ],
+    },
+];
