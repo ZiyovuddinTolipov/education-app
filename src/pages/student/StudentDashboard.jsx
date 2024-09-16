@@ -1,5 +1,6 @@
 import DashboardLayout from '@/layouts/common/DashboardLayout';
 import { MdAssignment, MdLibraryBooks, MdGrade, MdQuiz } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const StudentDashboard = () => {
     const subjects = [
@@ -19,7 +20,7 @@ const StudentDashboard = () => {
                             <h2 className="text-lg font-semibold text-text-light dark:text-text-dark">{subject.name}</h2>
                             <div className="flex items-center mt-2">
                                 <MdAssignment className="text-gray-600 dark:text-gray-300 mr-2" />
-                                <p className="text-gray-600 dark:text-gray-300">Mustaqil ishlar: {subject.independentWorks}</p>
+                                <Link to='independent-works' className='hover:underline'><p className="text-gray-600 dark:text-gray-300">Mustaqil ishlar: {subject.independentWorks}</p></Link>
                             </div>
                             <div className="flex items-center mt-2">
                                 <MdLibraryBooks className="text-gray-600 dark:text-gray-300 mr-2" />

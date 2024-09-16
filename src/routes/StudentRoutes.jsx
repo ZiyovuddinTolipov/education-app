@@ -5,12 +5,14 @@ import VideoLessonDetail from '@/components/student/VideoLessonDetail';
 import Quiz from '@/pages/student/Quiz';
 import Courses from '@/components/student/Courses'; // Yangi import
 import CourseDetail from '@/components/student/CourseDetail'; // Yangi import
+import IndependentWorks from '@/components/student/IndependentWorks';
 
 const StudentRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<StudentDashboard />} />
             <Route path="/video-lessons/*" element={<VideoLessons />} />
+            <Route path="/independent-works/*" element={<IndependentWorks />} />
             <Route path="/video-lessons/:id" element={<VideoLessonDetail />} />
             <Route path="/video-lessons/:id/quiz" element={<Quiz />} />
             <Route path="/courses/*" element={<Courses />} /> {/* Yangi marshrut */}

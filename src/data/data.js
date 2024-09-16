@@ -676,3 +676,52 @@ export const coursesData = [
         ],
     },
 ];
+
+export const sampleData = [
+    {
+        id: 1,
+        title: "Mathematics Assignment 1",
+        subject: "Mathematics",
+        teacher: "John Doe",
+        dueDate: "2023-12-01",
+        points: 100,
+        status: "Berildi"
+    },
+    {
+        id: 2,
+        title: "Science Project",
+        subject: "Science",
+        teacher: "Jane Smith",
+        dueDate: "2023-12-10",
+        points: 150,
+        status: "Kutilmoqda"
+    },
+    {
+        id: 3,
+        title: "History Essay",
+        subject: "History",
+        teacher: "Emily Johnson",
+        dueDate: "2023-11-25",
+        points: 80,
+        status: "Bajarildi"
+    },
+    {
+        id: 4,
+        title: "Literature Review",
+        subject: "Literature",
+        teacher: "Michael Brown",
+        dueDate: "2023-12-15",
+        points: 120,
+        status: "Berildi"
+    },
+    {
+        id: 5,
+        title: "Art Project",
+        subject: "Art",
+        teacher: "Sarah Davis",
+        dueDate: "2023-12-20",
+        points: 90,
+        status: "Kutilmoqda"
+    }
+];
+
