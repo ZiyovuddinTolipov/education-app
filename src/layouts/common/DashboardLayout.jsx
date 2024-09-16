@@ -35,7 +35,7 @@ const DashboardLayout = ({ children }) => {
             />
             <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
                 <header className="bg-white dark:bg-[#1E1E2D] shadow-sm fixed top-0 left-0 right-0 z-50">
-                    <div className={`max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
+                    <div className={`max-w-full mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
                         <div className="flex items-center">
                             <h1 className="text-2xl font-semibold text-[#6C5DD3] dark:text-white mr-8">CRM</h1>
                             <div className="relative">
