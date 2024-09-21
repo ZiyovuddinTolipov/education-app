@@ -36,7 +36,7 @@ const IndependentWorkCards = () => {
                     <p className="text-gray-600 dark:text-gray-400">Teacher: <span className="font-medium">{work.teacher}</span></p>
                     <p className="text-gray-600 dark:text-gray-400">Points: <span className="font-medium">{work.points}</span></p>
                     <div className="mt-2">
-                        <span className={`inline-block rounded-full px-2 py-1 text-sm ${work.status === "Bajarildi" ? "bg-green-500 text-white" : work.status === "Berildi" ? "bg-blue-500 text-white" : "bg-yellow-500 text-white"}`}>
+                        <span className={`inline-block rounded-full px-2 py-1 text-sm ${work.status === "Bajarildi" ? "bg-green-500 text-white" : work.status === "Berildi" ? "bg-blue-500 text-white" : work.status === "Berilmagan" ? "bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}>
                             {work.status}
                         </span>
                     </div>

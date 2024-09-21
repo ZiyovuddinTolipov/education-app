@@ -4,7 +4,7 @@ const MainLayout = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark">
             <header className="bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark p-4">
-                <h1>My App</h1>
+                <h1>EduCation</h1>
             </header>
             <main className="flex-1 p-6">
                 {children}
