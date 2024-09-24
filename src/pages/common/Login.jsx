@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthProvider';
+import ApiService from '@/services/ApiService'; // Import ApiService
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -12,10 +13,13 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const isLoggedIn = await login(username, password);
-            if (!isLoggedIn) {
+            // Use ApiService to handle login
+            const response = await ApiService.signin(username, password); // Call the signin method
+            if (response.status !== 200) {
                 throw new Error("Noto'g'ri foydalanuvchi nomi yoki parol");
             }
+            // Assuming login function updates user context
+            await login(username, password);
         } catch (error) {
             alert(error.message);
         }
