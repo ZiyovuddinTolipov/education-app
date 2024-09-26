@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthProvider';
 import ApiService from '@/services/ApiService'; // Import ApiService
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -14,11 +15,10 @@ const Login = () => {
         e.preventDefault();
         try {
             // Use ApiService to handle login
-            const response = await ApiService.signin(username, password); // Call the signin method
-            if (response.status !== 200) {
-                throw new Error("Noto'g'ri foydalanuvchi nomi yoki parol");
-            }
-            // Assuming login function updates user context
+            const res = await ApiService.signin(username, password); // Call the signin method
+            console.log(res)
+            !res.token && toast.error('Login yoki parol xato.Qaytadan urining!')
+            res.token && toast.success('Hisobga kirildi!')
             await login(username, password);
         } catch (error) {
             alert(error.message);
