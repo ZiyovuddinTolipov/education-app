@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         console.log(username,password)
-        let role = null;
+        let role = 'admin';
         if (username === import.meta.env.VITE_ADMIN_USERNAME && password === import.meta.env.VITE_ADMIN_PASSWORD) {
             console.log("admin")
             role = 'admin';

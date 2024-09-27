@@ -13,8 +13,8 @@ const AdminDashboard = () => {
 
     return (
         <DashboardLayout >
-            <div className="p-6 bg-gray-100 dark:bg-gray-900">
-                <h1 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">Admin boshqaruv paneli</h1>
+            <div className="p-6 bg-background-light dark:bg-background-dark"> 
+                <h1 className="text-3xl font-bold mb-8 text-text-light dark:text-text-dark">Admin boshqaruv paneli</h1> 
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {stats.map((stat, index) => (
@@ -23,46 +23,46 @@ const AdminDashboard = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <Link to="/admin/tests" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                        <FaClipboardList className="text-3xl text-blue-500 mr-4" />
+                    <Link to="/admin/tests" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow"> 
+                        <FaClipboardList className="text-3xl text-primary-light dark:text-primary-dark mr-4" /> 
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Testlarni boshqarish</h2>
-                            <p className="text-gray-600 dark:text-gray-300">Testlarni yaratish, tahrirlash va o'chirish</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">Testlarni boshqarish</h2>
+                            <p className="text-text-light dark:text-text-dark">Testlarni yaratish, tahrirlash va o'chirish</p>
                         </div>
                     </Link>
-                    <Link to="/admin/users" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <Link to="/admin/users" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow">
                         <FaUsers className="text-3xl text-green-500 mr-4" />
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Foydalanuvchilarni boshqarish</h2>
-                            <p className="text-gray-600 dark:text-gray-300">Foydalanuvchi profillarini yaratish va tahrirlash</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">Foydalanuvchilarni boshqarish</h2>
+                            <p className="text-text-light dark:text-text-dark">Foydalanuvchi profillarini yaratish va tahrirlash</p>
                         </div>
                     </Link>
-                    <Link to="/admin/statistics" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <Link to="/admin/statistics" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow">
                         <FaChartBar className="text-3xl text-yellow-500 mr-4" />
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Statistika</h2>
-                            <p className="text-gray-600 dark:text-gray-300">O'quvchilar statistikasini ko'rish va tahlil qilish</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">Statistika</h2>
+                            <p className="text-text-light dark:text-text-dark">O'quvchilar statistikasini ko'rish va tahlil qilish</p>
                         </div>
                     </Link>
-                    <Link to="/admin/files" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <Link to="/admin/files" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow">
                         <FaFileAlt className="text-3xl text-purple-500 mr-4" />
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Fayllarni boshqarish</h2>
-                            <p className="text-gray-600 dark:text-gray-300">Resurslarni yuklash va boshqarish</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">Fayllarni boshqarish</h2>
+                            <p className="text-text-light dark:text-text-dark">Resurslarni yuklash va boshqarish</p>
                         </div>
                     </Link>
-                    <Link to="/admin/surveys" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <Link to="/admin/surveys" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow">
                         <FaPoll className="text-3xl text-red-500 mr-4" />
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">So'rovnomalar</h2>
-                            <p className="text-gray-600 dark:text-gray-300">O'qituvchilar baholash tizimini boshqarish</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">So'rovnomalar</h2>
+                            <p className="text-text-light dark:text-text-dark">O'qituvchilar baholash tizimini boshqarish</p>
                         </div>
                     </Link>
-                    <Link to="/admin/settings" className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <Link to="/admin/settings" className="flex items-center p-6 bg-surface-light dark:bg-surface-dark rounded-lg shadow-md hover:shadow-lg transition-shadow">
                         <FaCog className="text-3xl text-gray-500 mr-4" />
                         <div>
-                            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Tizim sozlamalari</h2>
-                            <p className="text-gray-600 dark:text-gray-300">Xavfsizlik va til sozlamalarini boshqarish</p>
+                            <h2 className="text-xl font-semibold text-text-light dark:text-text-dark">Tizim sozlamalari</h2>
+                            <p className="text-text-light dark:text-text-dark">Xavfsizlik va til sozlamalarini boshqarish</p>
                         </div>
                     </Link>
                 </div>

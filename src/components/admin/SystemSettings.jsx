@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import { FaSave } from 'react-icons/fa';
+import DashboardLayout from '@/layouts/common/DashboardLayout';
 
 const SystemSettings = () => {
     const [settings, setSettings] = useState({
@@ -18,6 +19,8 @@ const SystemSettings = () => {
     };
 
     return (
+        <DashboardLayout >
+
         <div className="p-6 bg-gray-100 dark:bg-gray-900">
             <h1 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">Tizim sozlamalari</h1>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
@@ -43,7 +46,7 @@ const SystemSettings = () => {
                             value={settings.passwordComplexity}
                             onChange={handleChange}
                             className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600"
-                        >
+                            >
                             <option value="low">Past</option>
                             <option value="medium">Orta</option>
                             <option value="high">Yuqori</option>
@@ -57,7 +60,7 @@ const SystemSettings = () => {
                             value={settings.sessionDuration}
                             onChange={handleChange}
                             className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600"
-                        />
+                            />
                     </div>
                     <button onClick={saveSettings} className="mt-4 p-2 bg-blue-500 text-white rounded flex items-center hover:bg-blue-600">
                         <FaSave className="mr-2" /> Saqlash
@@ -65,6 +68,7 @@ const SystemSettings = () => {
                 </div>
             </div>
         </div>
+    </DashboardLayout>
     );
 };
 
