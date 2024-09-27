@@ -90,7 +90,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                                 className={`flex flex-col items-center ${location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'}`}
                             >
                                 {item.icon && <item.icon size={24} className={location.pathname === item.to ? 'text-primary-light dark:text-primary-dark' : 'text-text-light dark:text-text-dark'} />}
-                                <span className="text-xs">{item.text}</span>
+                                {/* <span className="text-xs">{item.text}</span> */}
                             </Link>
                         </li>
                     ))}
