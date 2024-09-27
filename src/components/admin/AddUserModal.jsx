@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             <div className="relative bg-white dark:bg-gray-800 w-full max-w-md m-auto flex-col flex rounded-lg shadow-lg">
                 <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
                     <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                        {/* Modal sarlavhasi uchun joy */}
+                    Yangi foydalanuvchi qo&apos;shish
                     </h3>
                     <button
                         onClick={onClose}
