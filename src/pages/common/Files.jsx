@@ -29,6 +29,7 @@ const Files = () => {
     const [filter, setFilter] = useState('');
     const [showFilterMenu, setShowFilterMenu] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [fileDescription, setFileDescription] = useState(''); // Yangi state qo'shildi
 
     const categories = useMemo(() => {
         return ['Barchasi', ...new Set(filesData.map(file => file.category))];
@@ -89,6 +90,15 @@ const Files = () => {
                     </div>
                 </div>
                 <div className="px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="mb-4">
+                        <input
+                            type="text"
+                            placeholder="Fayl haqida qisqacha izoh..."
+                            value={fileDescription}
+                            onChange={(e) => setFileDescription(e.target.value)}
+                            className="w-full pl-4 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                        />
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredFiles.map((file) => {
                             const FileIcon = getFileIcon(file.category);
@@ -98,6 +108,7 @@ const Files = () => {
                                         <FileIcon className="text-5xl text-primary-light dark:text-primary-dark mb-4 mx-auto" />
                                         <h3 className="text-xl font-semibold mb-2 text-text-light dark:text-text-dark">{file.name}</h3>
                                         <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{file.description}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{fileDescription}</p> {/* Yangi izoh qo'shildi */}
                                         <p className="text-xs text-gray-500 dark:text-gray-400">Kategoriya: {file.category}</p>
                                         <p className="text-xs text-gray-500 dark:text-gray-400">Yaratilgan sana: {new Date(file.createdAt).toLocaleDateString()}</p>
                                     </div>

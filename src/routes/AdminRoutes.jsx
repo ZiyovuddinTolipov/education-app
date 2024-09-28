@@ -3,7 +3,7 @@ import AdminDashboard from '@/pages/admin/AdminDashboard';
 import TestManagement from '@/components/admin/TestManagement';
 import UserManagement from '@/components/admin/UserManagement';
 import Statistics from '@/components/admin/Statistics';
-import FileManagement from '@/components/admin/FileManagement';
+import FileManagement from '@/pages/common/Files';
 import SurveyManagement from '@/components/admin/SurveyManagement';
 import SystemSettings from '@/components/admin/SystemSettings';
 
