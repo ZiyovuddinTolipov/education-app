@@ -56,10 +56,10 @@ const Messages = () => {
 
     return (
         <DashboardLayout>
-            <div className="flex flex-col md:flex-row max-h-[80svh] h-auto  bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                <div className={`w-full md:w-1/3 bg-surface-light dark:bg-surface-dark border-b md:border-r border-r-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
+            <div className="flex flex-col md:flex-row max-h-[75svh] h-auto  bg-background-light dark:bg-background-dark rounded-lg shadow-lg overflow-hidden border-2 border-primary-dark" data-aos="fade-up">
+                <div className={`w-full md:w-1/3 bg-surface-light overflow-auto dark:bg-surface-dark border-b md:border-r border-r-accent-light dark:border-accent-dark ${isMobileMessageListVisible ? 'block' : 'hidden md:block'} flex flex-col`}>
                     <h2 className="text-xl font-bold p-4 bg-primary-light dark:bg-primary-dark text-white dark:text-text-dark" data-aos="fade-right">Xabarlar</h2>
-                    <div className="overflow-y-auto flex-grow max-h-[100%]">
+                    <div className="flex-grow max-h-[100%]">
                         {loading ? (
                             Array(5).fill().map((_, index) => <MessageSkeleton key={index} />)
                         ) : (
@@ -74,14 +74,14 @@ const Messages = () => {
                                 >
                                     <div className="flex items-center">
                                         {message.unread ?
-                                            <FaEnvelope className="text-white dark:text-primary-300 mr-2" /> :
-                                            <FaEnvelopeOpen className="text-wh dark:text-surface-400 mr-2" />
+                                            <FaEnvelope className="text-primary-light  mr-2" /> :
+                                            <FaEnvelopeOpen className="text-primary-light  mr-2" />
                                         }
                                         <div>
                                             <div className={`font-semibold ${message.unread ? 'text-primary-dark dark:text-white' : 'text-surface-600 dark:text-surface-300'}`}>
                                                 {message.sender}
                                             </div>
-                                            <div className="text-sm text-surface-500 dark:text-surface-400">{message.subject}</div>
+                                            <div className="text-sm text-surface-500 dark:text-primary-light">{message.subject}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -89,10 +89,10 @@ const Messages = () => {
                         )}
                     </div>
                 </div>
-                <div className={`w-full md:w-2/3 bg-background-light dark:bg-background-dark p-6 ${isMobileMessageListVisible ? 'hidden md:block' : 'block'}`}>
+                <div className={`w-full md:w-2/3 overflow-auto bg-background-light dark:bg-background-dark p-6 ${isMobileMessageListVisible ? 'hidden md:block' : 'block'}`}>
                     {!isMobileMessageListVisible && (
                         <button
-                            className="mb-4 px-4 py-2 bg-surface-200 dark:bg-surface-300 text-surface-700 dark:text-surface-100 rounded-md hover:bg-surface-300 dark:hover:bg-surface-400 transition duration-200 ease-in-out md:hidden"
+                            className="mb-4 px-4 py-2 bg-primary-dark dark:bg-primary-light text-white dark:text-surface-100 rounded-md hover:bg-surface-300 dark:hover:bg-surface-400 transition duration-200 ease-in-out md:hidden"
                             onClick={handleBackToList}
                         >
                             &larr; Xabarlarga qaytish
@@ -116,22 +116,22 @@ const Messages = () => {
                                 />
                             </div>
                             <div className="bg-indigo-50 dark:bg-indigo-900 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-                                <h4 className="text-xl font-semibold mb-4 text-primary-light dark:text-primary-dark">Javob yozish</h4>
+                                <h4 className="text-xl font-semibold mb-4 text-primary-light dark:text-white">Javob yozish</h4>
                                 <ReactQuill
                                     theme="snow"
                                     value={reply}
                                     onChange={setReply}
-                                    className="bg-white dark:bg-gray-800 text-text-light dark:text-text-dark mb-4 quill-dark"
+                                    className="bg-white dark:bg-primary-light text-text-light dark:text-text-dark mb-4 "
                                 />
                                 <div className="mt-4 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4">
-                                    <button
-                                        className="px-6 py-2 bg-gradient-light dark:bg-gradient-dark text-white rounded-md hover:opacity-90 transition duration-200 ease-in-out flex items-center justify-center"
-                                        onClick={handleReply}
-                                    >
-                                        <FaReply className="mr-2" /> Javob berish
-                                    </button>
                                     <button className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-200 ease-in-out flex items-center justify-center">
                                         <FaTrash className="mr-2" /> O&apos;chirish
+                                    </button>
+                                    <button
+                                        className="px-6 py-2 bg-primary-light dark:bg-gradient-dark text-white rounded-md hover:opacity-90 transition duration-200 ease-in-out flex items-center justify-center"
+                                        onClick={handleReply}
+                                    >
+                                        <FaReply className="mr-2" /> Xabarni yuborish
                                     </button>
                                 </div>
                             </div>
