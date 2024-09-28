@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     const toggleSubmenu = () => setIsSubmenuOpen((prev) => !prev);
 
     const adminMenuItems = [
-        { to: "/admin", icon: MdDashboard, text: "Dashboard" },
+        { to: "/admin", icon: MdDashboard, text: "Bosh Sahifa" },
         { to: "/admin/tests", icon: MdQuiz, text: "Testlar" },
         { to: "/admin/users", icon: MdPeople, text: "Foydalanuvchilar" },
         { to: "/admin/statistics", icon: MdInsertChart, text: "Statistika" },
@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     ];
 
     const teacherMenuItems = [
-        { to: "/teacher", icon: MdDashboard, text: "Dashboard" },
+        { to: "/teacher", icon: MdDashboard, text: "Bosh Sahifa" },
         { to: "/teacher/lesson-planner", icon: MdSchool, text: "Dars rejasi" },
         { to: "/teacher/grade-book", icon: MdAssignment, text: "Baholash" },
         { to: "/teacher/assignments", icon: MdQuiz, text: "Topshiriqlar" },
@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     ];
 
     const studentMenuItems = [
-        { to: "/student", icon: MdDashboard, text: "Dashboard" },
+        { to: "/student", icon: MdDashboard, text: "Bosh Sahifa" },
         { to: "/student/video-lessons", icon: MdVideoLibrary, text: "Video darslar" },
         { to: "/student/courses", icon: MdSchool, text: "Kurslar" }, // Kurslar qo'shildi
     ];
@@ -58,7 +58,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             {/* Desktop Sidebar */}
             <aside className={`hidden sm:block bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark h-screen fixed left-0 top-0 overflow-y-auto z-[51] transition-all duration-300 border-r border-r-primary-light ${isOpen ? 'w-64' : 'w-16'}`}>
                 <div className="p-4 flex justify-between items-center bg-primary-light dark:bg-primary-dark relative h-16">
-                    <h2 className={`text-2xl font-bold text-white ${isOpen ? 'block' : 'hidden'}`}>ALgoCRM</h2>
+                    <h2 className={`text-2xl font-bold text-white ${isOpen ? 'block' : 'hidden'}`}>Elektronika.uz</h2>
                     <button onClick={toggleSidebar} className="text-white absolute right-4 top-1/2 transform -translate-y-1/2">
                         {isOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
                     </button>
