@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useLocation, Link } from 'react-router-dom';
-import { MdDashboard, MdSchool, MdAssignment, MdQuiz, MdMenu, MdClose, MdPeople, MdSettings, MdInsertChart, MdVideoLibrary } from 'react-icons/md';
+import { MdDashboard, MdSchool, MdAssignment,MdOutlineVideoSettings, MdQuiz, MdMenu, MdClose, MdPeople, MdSettings, MdInsertChart, MdVideoLibrary } from 'react-icons/md';
 import { useState } from 'react';
 import { IoDocuments } from "react-icons/io5";
 import { useAuth } from '@/context/AuthProvider';
@@ -19,6 +19,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { to: "/admin/users", icon: MdPeople, text: "Foydalanuvchilar" },
         { to: "/admin/statistics", icon: MdInsertChart, text: "Statistika" },
         { to: "/admin/files", icon: IoDocuments, text: "Fayllar" },
+        { to: "/admin/video-lessons", icon: MdOutlineVideoSettings, text: "Video Darslar" },
         { to: "/admin/surveys", icon: MdAssignment, text: "So'rovnomalar" },
         { to: "/admin/settings", icon: MdSettings, text: "Sozlamalar" },
     ];
