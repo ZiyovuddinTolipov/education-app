@@ -18,10 +18,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { to: "/admin/tests", icon: MdQuiz, text: "Testlar" },
         { to: "/admin/users", icon: MdPeople, text: "Foydalanuvchilar" },
         { to: "/admin/statistics", icon: MdInsertChart, text: "Statistika" },
-        { to: "/admin/files", icon: IoDocuments, text: "Fayllar" },
         { to: "/admin/video-lessons", icon: MdOutlineVideoSettings, text: "Video Darslar" },
         { to: "/admin/surveys", icon: MdAssignment, text: "So'rovnomalar" },
-        { to: "/admin/settings", icon: MdSettings, text: "Sozlamalar" },
     ];
 
     const teacherMenuItems = [
