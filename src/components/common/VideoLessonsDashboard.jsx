@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // React Router'dan useNavigate ni import qilish
 import DashboardLayout from '@/layouts/common/DashboardLayout';
 
 const sections = [
@@ -18,14 +19,23 @@ const sampleLessons = {
 };
 
 const VideoLessonsDashboard = () => {
-    const [selectedSection, setSelectedSection] = useState(sections[0].id); // Tanlangan bo'lim
+    const [selectedSection, setSelectedSection] = useState(sections[0].id); // Tanlangan bo&apos;lim
+    const navigate = useNavigate(); // useNavigate hook'ini chaqirish
 
     const addLesson = () => {
-        // Yangi dars qo'shish funksiyasi
+        // Yangi dars qo&apos;shish funksiyasi
     };
 
     const deleteLesson = (id) => {
-        // Darsni o'chirish funksiyasi
+        // Darsni o&apos;chirish funksiyasi
+        let deleteConfirm = confirm("Ushbu darslar toplamini o'chirasizmi ?")
+        if(deleteConfirm){
+            delete sampleLessons.id==id
+        }
+    };
+
+    const goToLesson = (sectionName, lessonId) => {
+        navigate(`/admin/video-lessons/${sectionName}/${lessonId}`); // Sahifaga o'tish
     };
 
     return (
@@ -48,7 +58,7 @@ const VideoLessonsDashboard = () => {
                         onClick={addLesson}
                         className="bg-primary-light text-white px-4 py-2 rounded mb-4"
                     >
-                        Yangi Dars Qo'shish
+                        Yangi Dars Qo&apos;shish
                     </button>
                 </div>
                 <div className="grid grid-cols-1 gap-4">
@@ -57,10 +67,16 @@ const VideoLessonsDashboard = () => {
                             <h2 className="font-semibold">{lesson.title}</h2>
                             <p className="text-gray-600">{lesson.description}</p>
                             <button
+                                onClick={() => goToLesson(selectedSection === 1 ? 'frontend' : 'backend', lesson.id)} // Sahifaga o'tish
+                                className="bg-blue-500 text-white px-2 py-1 rounded"
+                            >
+                                Darsni Ko&apos;rsatish
+                            </button>
+                            <button
                                 onClick={() => deleteLesson(lesson.id)}
                                 className="bg-red-500 text-white px-2 py-1 rounded"
                             >
-                                O'chirish
+                                O&apos;chirish
                             </button>
                         </div>
                     ))}
