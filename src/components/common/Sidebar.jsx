@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                             <li key={index} className="mb-2">
                                 <Link
                                     to={item.to}
-                                    className={`flex items-center px-4 py-2 text-sm ${location.pathname === item.to ? 'bg-primary-light dark:bg-primary-dark text-white' : 'text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800'} rounded-lg transition-colors duration-150`}
+                                    className={`flex items-center px-4 py-2 text-sm ${location.pathname === item.to ? 'bg-primary-light text-base dark:bg-primary-dark text-white' : 'text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800'} rounded-lg transition-colors duration-150`}
                                 >
                                     {item.icon && <item.icon className={`text-lg ${isOpen ? 'mr-3' : 'mx-auto'}`} />}
                                     {isOpen && <span>{item.text}</span>}
