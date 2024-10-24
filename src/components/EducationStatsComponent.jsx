@@ -87,7 +87,7 @@ const EducationStatsComponent = () => {
                             <th className="py-3 px-4 text-left">Davomat</th>
                             <th className="py-3 px-4 text-left">Baho</th>
                             <th className="py-3 px-4 text-left">Fan</th>
-                            <th className="py-3 px-4 text-left">Oxirgi qatnashgan sana </th>
+                            <th className="py-3 px-4 text-left">Oxirgi qatnashgan sana</th>
                         </tr>
                     </thead>
                     <tbody>
