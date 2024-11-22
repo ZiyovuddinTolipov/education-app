@@ -18,7 +18,8 @@ const TestManagement = () => {
     const [newTest, setNewTest] = useState({ title: '', type: '', difficulty: '' });
     const [file, setFile] = useState(null);
 
-    const addTest = () => {
+    const addTest = (e) => {
+        e.preventDefault(); // Sahifani yangilanishini oldini olish
         const newTestWithDate = { ...newTest, id: Date.now(), file, createdAt: new Date().toLocaleString() }; // Yaratilgan sanani qo'shish
         setTests([...tests, newTestWithDate]);
         setNewTest({ title: '', type: '', difficulty: '' });
@@ -53,7 +54,7 @@ const TestManagement = () => {
                 <h1 className="text-2xl md:text-3xl font-bold mb-6 text-text-light dark:text-text-dark">Testlarni boshqarish</h1>
                 <div className="mb-6 bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-lg">
                     <h2 className="text-lg md:text-xl font-semibold mb-4 text-text-light dark:text-text-dark">Yangi test qo'shish</h2>
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={addTest}>
                         <div className="flex flex-col md:flex-row gap-4">
                             <input
                                 type="text"
@@ -89,7 +90,7 @@ const TestManagement = () => {
                                     {file ? file.name : 'Fayl yuklash'}
                                 </p>
                             </div>
-                            <button onClick={addTest} className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center whitespace-nowrap">
+                            <button type="submit" className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center whitespace-nowrap">
                                 <FaPlus className="mr-2" /> Test qo'shish
                             </button>
                         </div>
