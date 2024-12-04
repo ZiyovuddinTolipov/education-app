@@ -27,14 +27,14 @@ const DashboardLayout = ({ children }) => {
     };
 
     return (
-        <div className="flex min-h-[100svh] h-auto bg-[#F7F7FA] dark:bg-[#1E1E2D]">
+        <div className="flex min-h-[100svh] h-auto bg-[#F7F7FA] dark:bg-black">
             <Sidebar 
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar} 
                 isDarkMode={theme === 'dark'}
             />
             <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
-                <header className="bg-white dark:bg-[#1E1E2D] shadow-sm fixed top-0 left-0 right-0 z-50">
+                <header className="bg-white dark:bg-black shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-500">
                     <div className={`max-w-full mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
                         <div className="flex items-center">
                             <h1 className="text-2xl font-semibold text-[#6C5DD3] dark:text-white mr-8">AAA</h1>
@@ -80,7 +80,7 @@ const DashboardLayout = ({ children }) => {
                         </div>
                     </div>
                 </header>
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#F7F7FA] dark:bg-[#1E1E2D] mt-16 p-6">
+                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#F7F7FA] dark:bg-black mt-16 p-6">
                     <div className=" mx-auto px-4 sm:px-6 lg:px-0 py-8">
                         {children}
                     </div>

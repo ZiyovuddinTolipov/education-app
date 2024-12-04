@@ -17,8 +17,8 @@ export default {
           dark: '#64B5F6', // Dark mode uchun to'qroq ko'k
         },
         background: {
-          light: '#F7F7FA', // Juda och kulrang
-          dark: '#1E1E2D', // To'q ko'k-kulrang
+          light: '#ffffff', // Juda och kulrang
+          dark: '#000000', // To'q ko'k-kulrang
         },
         text: {
           light: '#4B5563', // To'q kulrang

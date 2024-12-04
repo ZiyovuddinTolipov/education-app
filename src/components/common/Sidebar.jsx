@@ -55,8 +55,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     return (
         <>
             {/* Desktop Sidebar */}
-            <aside className={`hidden sm:block bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark h-screen fixed left-0 top-0 overflow-y-auto z-[51] transition-all duration-300 border-r border-r-primary-light ${isOpen ? 'w-64' : 'w-16'}`}>
-                <div className="p-4 flex justify-between items-center bg-primary-light dark:bg-primary-dark relative h-16">
+            <aside className={`hidden sm:block bg-background-light dark:bg-black text-text-light dark:text-text-dark h-screen fixed left-0 top-0 overflow-y-auto z-[51] transition-all duration-300 border-r border-r-primary-light ${isOpen ? 'w-64' : 'w-16'}`}>
+                <div className="p-4 flex justify-between items-center bg-primary-light dark:bg-black relative h-18 pb-6">
                     <h2 className={`text-2xl font-bold text-white ${isOpen ? 'block' : 'hidden'}`}>Elektronika.uz</h2>
                     <button onClick={toggleSidebar} className="text-white absolute right-4 top-1/2 transform -translate-y-1/2">
                         {isOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
