@@ -19,7 +19,7 @@ const Navbar = ({maxWidth}) => {
         navigate('/login');
     };
     return (
-        <header className={`bg-white dark:bg-black shadow-sm fixed top-0 right-0 z-50 border-b border-gray-500 w-[calc(100%-${maxWidth}px)]`}>
+        <header className={`bg-white dark:bg-black shadow-sm sticky w-full top-0 right-0 l-0 z-50 border-b border-gray-500`}>
             <div className={`max-w-full mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center`}>
                 <div className="flex items-center">
                     <Link to='/' className="text-2xl font-semibold text-[#6C5DD3] dark:text-white mr-8">AAA</Link>

@@ -14,7 +14,7 @@ const VideoLessonsDashboard = () => {
             <div className='w-full max-w-[300px] py-4'>
                 <VideoLessonsSidebar  />
             </div>
-            <div className='relative'>
+            <div className='relative w-full flex flex-col'>
                 <Navbar maxWidth={300} />
                 <h2 className='text-xl text-white mt-20 ml-10'>{id ? "yes" :"no"} sdfdf</h2>
             </div>
