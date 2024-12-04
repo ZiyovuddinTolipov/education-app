@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { ChevronDown } from 'lucide-react'
 import DashboardLayout from '../../layouts/common/DashboardLayout'
+import { Link } from "react-router-dom"
 
 export default function CourseModules() {
     const [expandedModule, setExpandedModule] = useState(null)
@@ -10,11 +11,11 @@ export default function CourseModules() {
         {
             title: "1-Modul. JavaScript asoslari",
             lessons: [
-                { title: "N°1. Kirish", duration: "10:00" },
-                { title: "N°2. O'zgaruvchilar", duration: "15:00" },
-                { title: "N°3. Funksiyalar", duration: "20:00" },
-                { title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
-                { title: "N°5. Tsikllar", duration: "18:00" },
+                {id:1, title: "N°1. Kirish", duration: "10:00" },
+                {id:2, title: "N°2. O'zgaruvchilar", duration: "15:00" },
+                {id:3, title: "N°3. Funksiyalar", duration: "20:00" },
+                {id:4, title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
+                {id:5, title: "N°5. Tsikllar", duration: "18:00" },
             ],
             totalLessons: 5,
             duration: "7.21 soat"
@@ -22,11 +23,11 @@ export default function CourseModules() {
         {
             title: "2-Modul. JavaScript loyiha",
             lessons: [
-                { title: "N°21. ClassList & Delegatsiya", duration: "17:49" },
-                { title: "N°22. Amaliyot. ClassList & Delegatsiya", duration: "20:24" },
-                { title: "N°23. Animatsiya va Interval", duration: "15:12" },
-                { title: "N°24. Date", duration: "16:21" },
-                { title: "N°25. Amaliyot. Date va Loader", duration: "23:18" },
+                {id:7, title: "N°21. ClassList & Delegatsiya", duration: "17:49" },
+                {id:7, title: "N°22. Amaliyot. ClassList & Delegatsiya", duration: "20:24" },
+                {id:7, title: "N°23. Animatsiya va Interval", duration: "15:12" },
+                {id:7, title: "N°24. Date", duration: "16:21" },
+                {id:7, title: "N°25. Amaliyot. Date va Loader", duration: "23:18" },
             ],
             totalLessons: 11,
             duration: "3.23 soat"
@@ -34,11 +35,11 @@ export default function CourseModules() {
         {
             title: "3-Modul. Murakkab terminlar",
             lessons: [
-                { title: "N°1. Kirish", duration: "10:00" },
-                { title: "N°2. O'zgaruvchilar", duration: "15:00" },
-                { title: "N°3. Funksiyalar", duration: "20:00" },
-                { title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
-                { title: "N°5. Tsikllar", duration: "18:00" },
+                {id:7, title: "N°1. Kirish", duration: "10:00" },
+                {id:7, title: "N°2. O'zgaruvchilar", duration: "15:00" },
+                {id:7, title: "N°3. Funksiyalar", duration: "20:00" },
+                {id:7, title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
+                {id:7, title: "N°5. Tsikllar", duration: "18:00" },
             ],
             totalLessons: 12,
             duration: "4.53 soat"
@@ -46,11 +47,11 @@ export default function CourseModules() {
         {
             title: "4-Modul. Paint loyihasi",
             lessons: [
-                { title: "N°1. Kirish", duration: "10:00" },
-                { title: "N°2. O'zgaruvchilar", duration: "15:00" },
-                { title: "N°3. Funksiyalar", duration: "20:00" },
-                { title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
-                { title: "N°5. Tsikllar", duration: "18:00" },
+                {id:7, title: "N°1. Kirish", duration: "10:00" },
+                {id:7, title: "N°2. O'zgaruvchilar", duration: "15:00" },
+                {id:7, title: "N°3. Funksiyalar", duration: "20:00" },
+                {id:7, title: "N°4. Mantiqiy operatorlar", duration: "12:00" },
+                {id:7, title: "N°5. Tsikllar", duration: "18:00" },
             ],
             totalLessons: 12,
             duration: "1.40 soat"
@@ -84,13 +85,14 @@ export default function CourseModules() {
                             {expandedModule === index && (
                                 <div className="p-4 pt-0 space-y-2">
                                     {module.lessons.map((lesson, lessonIndex) => (
-                                        <div
+                                        <Link 
+                                            to={`/admin/course/${lesson.id}`}
                                             key={lessonIndex}
                                             className="flex items-center justify-between p-3 rounded hover:bg-zinc-800 transition-colors"
                                         >
                                             <span className="text-sm text-zinc-300">{lesson.title}</span>
                                             <span className="text-sm text-zinc-400">{lesson.duration}</span>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             )}
