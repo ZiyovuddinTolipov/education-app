@@ -19,8 +19,8 @@ const DashboardLayout = ({ children }) => {
             />
             <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'sm:ml-64' : 'sm:ml-16'}`}>
                 <Navbar maxWidth={250} />
-                <main className="flex-1 overflow-x-hidden bg-[#F7F7FA] dark:bg-black mt-16 p-6 overflow-y-auto">
-                    <div className=" mx-auto px-4 sm:px-6 lg:px-0 py-8 ">
+                <main className="flex-1 overflow-x-hidden bg-[#F7F7FA] dark:bg-black p-6 ">
+                    <div className=" mx-auto px-4 sm:px-6 lg:px-0 ">
                         {children}
                     </div>
                 </main>
