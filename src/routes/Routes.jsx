@@ -16,9 +16,9 @@ const AppRoutes = () => {
             <Route path="/messages" element={<Messages />} />
             <Route path="/profile" element={<Profile />} />
             <Route 
-                path="/admin/*" 
+                path="/Admin/*" 
                 element={
-                    <ProtectedRoute roles={['admin']}>
+                    <ProtectedRoute roles={['Admin']}>
                         <AdminRoutes />
                     </ProtectedRoute>
                 } 

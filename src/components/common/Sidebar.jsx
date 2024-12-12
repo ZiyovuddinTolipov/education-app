@@ -39,11 +39,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     const getMenuItems = () => {
         switch (user?.role) {
-            case 'admin':
+            case 'Admin':
                 return adminMenuItems;
-            case 'teacher':
+            case 'Teacher':
                 return teacherMenuItems;
-            case 'student':
+            case 'Student':
                 return studentMenuItems;
             default:
                 return [];

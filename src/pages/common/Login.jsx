@@ -19,7 +19,9 @@ const Login = () => {
             console.log(res)
             !res.token && toast.error('Login yoki parol xato.Qaytadan urining!')
             res.token && toast.success('Hisobga kirildi!')
-            await login(username, password);
+            localStorage.setItem('token', res.token)
+            localStorage.setItem('userRole',res.user.last_name)
+            
         } catch (error) {
             alert(error.message);
         }

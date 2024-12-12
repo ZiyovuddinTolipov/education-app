@@ -8,27 +8,27 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const storedRole = localStorage.getItem('userRole');
-        if (storedRole) {
-            setUser({ role: storedRole });
+        const token = localStorage.getItem('token');
+        
+        if (storedRole && token) {
+            setUser({ 
+                role: storedRole,
+                token: token 
+            });
         }
-    }, []); // Bo'sh dependency array
+    }, []); 
 
     const login = async (username, password) => {
-        console.log(username,password)
-        let role = 'admin';
-        if (username === import.meta.env.VITE_ADMIN_USERNAME && password === import.meta.env.VITE_ADMIN_PASSWORD) {
-            console.log("admin")
-            role = 'admin';
-        } else if (username === import.meta.env.VITE_TEACHER_USERNAME && password === import.meta.env.VITE_TEACHER_PASSWORD) {
-            console.log("teacher")
-            role = 'teacher';
-        } else if (username === import.meta.env.VITE_STUDENT_USERNAME && password === import.meta.env.VITE_STUDENT_PASSWORD) {
-            role = 'student';
-        }
-        console.log(username,password)
-        if (role) {
-            setUser({ role });
-            localStorage.setItem('userRole', role);
+        // This method is now mostly handled by ApiService in Login component
+        // We'll keep it for potential future use or consistency
+        const storedRole = localStorage.getItem('userRole');
+        const token = localStorage.getItem('token');
+
+        if (storedRole && token) {
+            setUser({ 
+                role: storedRole,
+                token: token 
+            });
             return true;
         }
         return false;
@@ -37,6 +37,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setUser(null);
         localStorage.removeItem('userRole');
+        localStorage.removeItem('token');
     };
 
     return (
