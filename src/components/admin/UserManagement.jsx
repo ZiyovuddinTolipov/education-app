@@ -3,6 +3,7 @@ import { FaPlus, FaTrash, FaEdit, FaUser, FaGraduationCap, FaUserShield, FaCircl
 import DashboardLayout from '@/layouts/common/DashboardLayout';
 import Modal from '@/components/admin/AddUserModal';
 import { usersData } from '@/data/data';
+import ApiService from '../../services/ApiService';
 
 const UserManagement = () => {
     const [users, setUsers] = useState([]);
@@ -15,6 +16,15 @@ const UserManagement = () => {
     useEffect(() => {
         setUsers(usersData);
         setFilteredUsers(usersData);
+        const fetchUsers = async () => {
+            try {
+                const res = await ApiService.getUsers()
+                console.log(res)
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchUsers();
     }, []);
 
     const addUser = () => {

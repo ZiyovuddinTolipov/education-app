@@ -20,20 +20,25 @@ const ApiService = {
 
         return response.json(); // Return the response data
     },
-    createUser: async(userData)=> {
-        try {
+    createUser: async (userData) => {
+     
             const response = await axios.post(`${API_URL}/create/user/`, userData, {
                 headers: {
                     'accept': 'application/json',
                     'authorization': `Token ${localStorage.getItem('token')}`, // Basic auth token
                     'Content-Type': 'application/json',
                     // Note: In a real app, you'd dynamically get the CSRF token                }
-            }});
+                }
+            });
             return response.data;
-        } catch (error) {
-            console.error('Error creating user:', error.response ? error.response.data : error.message);
-            throw error;
-        }
+    },
+    getUsers: async () =>{
+        const response = await axios.get(`${API_URL}/users/`, {
+            headers: {
+                'accept': 'application/json',
+            }
+        });
+        return response;
     }
 };
 
