@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = 'https://c8e1-213-230-87-2.ngrok-free.app'; // Replace with your actual API URL
+const API_URL = 'https://eduwebapp.pythonanywhere.com'; // Replace with your actual API URL
 
 const ApiService = {
     signin: async (username, password) => {
